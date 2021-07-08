@@ -1,0 +1,62 @@
+.header-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+}
+.tools {
+    display: flex;
+    flex-direction: row;
+    margin-right: 10px ;
+    align-items: center;
+    min-width: 300px;
+}
+.title {
+    width: 200px;
+    text-align: center;
+    font-weight: 600;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-weight: 700;
+    color: rgb(223, 74, 48);
+    font-family: Arial, Helvetica, sans-serif;
+}
+.fa-desktop {
+    color: #6b6b6b;
+}
+.status-container {
+    background-color: #e5fff1;
+    border-radius: 50%;
+    color: #0cbb52 !important;
+}
+.btn-invite {
+    background-color:#2873be ;
+    padding: 5px 6px;
+    color: white;
+    border-radius: 4px;
+    box-sizing: border-box;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    margin-left: 5px;
+    margin-right: 10px;
+}
+.status-container, .notification-container, .setting-container, .user-container, .title-container {
+    position: relative;
+    display: inline-block;
+    margin-right: 10px;
+}
+.status-icon, .notification-icon, .setting-icon, .user-icon {
+    height: 40px;
+    width: 40px;
+    box-sizing: border-box;
+    display: inline-flex;
+    justify-content: center;
+    color: #6b6b6b;
+    cursor: pointer;
+    line-height: 16px;
+    align-items: center;
+}

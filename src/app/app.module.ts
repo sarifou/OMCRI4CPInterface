@@ -9,6 +9,8 @@ import { ProcessComponent } from './components/process/process.component';
 import { AutoComponent } from './components/auto/auto.component';
 import { ConsoleComponent } from './components/console/console.component';
 import { HeaderComponent } from './components/header/header.component';
+import { SimulatorComponent } from './components/simulator/simulator.component';
+import { HistoryComponent } from './components/history/history.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { HeaderComponent } from './components/header/header.component';
     ProcessComponent,
     AutoComponent,
     ConsoleComponent,
-    HeaderComponent
+    HeaderComponent,
+    SimulatorComponent,
+    HistoryComponent
   ],
   imports: [
     BrowserModule,

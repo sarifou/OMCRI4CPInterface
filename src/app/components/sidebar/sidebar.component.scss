@@ -9,7 +9,7 @@
     align-items: center;
     justify-content: space-between;
     border-right: 1px solid #ededed;
-    padding-top: 30px;
+    padding-top: 10px;
 }
 .home-container, .process-container, .simulator-container, .auto-container, .history-container {
     position: relative;
@@ -23,6 +23,8 @@
     text-align: center;
     flex: none;
     color: #6b6b6b;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 .home-icon, .process-icon, .auto-icon, .history-icon, .simulator-icon {
     font-size: 20px;
@@ -32,4 +34,10 @@
         height: 16px;
         width: 16px;
     }
+}
+.active-item {
+    color: tomato;
+}
+.home-container:hover, .process-container:hover, .simulator-container:hover, .auto-container:hover, .history-container:hover {
+    color: rgba(255, 99, 71, 0.562);
 }

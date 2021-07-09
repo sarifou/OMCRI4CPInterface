@@ -1,1 +1,137 @@
-<p>home works!</p>
+<div class="container">
+    <div class="first-col">
+        <div class="description">
+            <div class="title">
+                <i class="fa fa-bookmark"></i><h3>Description</h3>
+            </div>
+            <div class="description-msg">
+                <p class="description-title">OMCRI4CP : Open Mobile Cloud Robotics for Connected Port</p>
+                <p class="description-contain">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
+                </p>
+            </div>
+            <div class="statistics">
+                <div class="currently">
+                    <h4>Currently in the port</h4>
+                </div>
+                <div class="statistics-block">
+                    <div class="statistics-item">
+                        <p class="statistic-value">323</p>
+                        <p class="statistic-label">Total devices</p>
+                    </div>
+                    <div class="statistics-item">
+                        <p class="statistic-value">300</p>
+                        <p class="statistic-label">Active devices</p>
+                    </div>
+                    <div class="statistics-item">
+                        <p class="statistic-value">23</p>
+                        <p class="statistic-label">Inactive devices</p>
+                    </div>
+                    <div class="statistics-item">
+                        <p class="statistic-value">250</p>
+                        <p class="statistic-label">Process</p>
+                    </div>
+                    <div class="statistics-item">
+                        <p class="statistic-value">1</p>
+                        <p class="statistic-label">Bugs</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="user-information">
+            <div class="date">
+                July 9, 2021
+            </div>
+            <div class="user-connected">
+                <div class="user-item">
+                    <div class="user-logo">
+                        <img src="/assets/img/Profil.jpg" class="user-avatar"alt="">
+                    </div>
+                    <div class="user-name">
+                        <div class="user-text-name">
+                            <p>Cherif Diallo</p>
+                        </div>
+                        <div class="user-text-attribut">
+                            <p>administrator</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="user-item">
+                    <div class="user-logo">
+                        <img src="/assets/img/man.png" class="user-avatar"alt="">
+                    </div>
+                    <div class="user-name">
+                        <div class="user-text-name">
+                            <p>Stephane Djeuga</p>
+                        </div>
+                        <div class="user-text-attribut">
+                            <p>visitor</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="user-item">
+                    <div class="user-logo">
+                        <img src="/assets/img/man.png" class="user-avatar"alt="">
+                    </div>
+                    <div class="user-name">
+                        <div class="user-text-name">
+                            <p>Gerald Dherbomez</p>
+                        </div>
+                        <div class="user-text-attribut">
+                            <p>administrator</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="recent-process">
+            <div class="title">
+                <i class="fa fa-codepen"></i><h3>Activity</h3>
+            </div>
+            <div class="recent-process-contain">
+                <div class="process-item" *ngFor="let process of process; let i = index" [ngClass]="{'in-progress' : process.state == 'In progress' , 'finish' : process.state == 'finish', 'interrupted' : process.state == 'Interrupted'}">
+                    <div class="process-id">
+                        <p>id : {{process.id}}</p>
+                    </div>
+                    <div class="process-name">
+                        <p>Desc : {{process.desc}}</p>
+                    </div>
+                    <div class="process-user">
+                        <p>Client : {{process.client}}</p>
+                    </div>
+                    <div class="process-state">
+                        <p>State : {{process.state}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="second-col">
+        <div class="get-started-container">
+            <div class="get-started">
+                <div class="title">
+                    <i class="fa fa-book"></i><h3>Get Started</h3>
+                </div>
+            </div>
+            <div class="list-item">
+                <div class="wiomcri item">
+                    <i class="fa fa-question-circle"></i> What is OMCRI4CP ?
+                </div>
+                <div class="add-new item">
+                    <i class="fa fa-plus-circle"></i> Add new ressource
+                </div>
+                <div class="create-process item">
+                    <i class="fa fa-codepen"></i> Create process
+                </div>
+                <div class="documentation item">
+                    <i class="fa fa-file"></i> User documentation
+                </div>
+                <div class="documentation item">
+                    <i class="fa fa-braille"></i> View More
+                </div>
+            </div>
+        </div>
+        <div class="simulator-snapshot">
+            <img src="/assets/img/simulator.png" alt="">
+        </div>
+    </div>
+</div>

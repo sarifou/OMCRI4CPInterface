@@ -1,0 +1,21 @@
+.console-container {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    padding-left: 10px;
+    padding-right: 10px;
+    justify-content: space-between;
+}
+.console-btn, .version {
+    display: flex;
+    padding: 0px 5px;
+    margin: 0px 5px;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: #6b6b6b;
+    cursor: pointer;
+    i {
+        margin-right: 3px;
+    }
+}

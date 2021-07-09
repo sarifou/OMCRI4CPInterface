@@ -20,11 +20,11 @@
     display: flex;
     justify-content: center;
     font-weight: 700;
-    color: rgb(223, 74, 48);
+    color: white;
     font-family: Arial, Helvetica, sans-serif;
 }
 .fa-desktop {
-    color: #6b6b6b;
+    color: tomato;
 }
 .status-container {
     background-color: #e5fff1;
@@ -32,7 +32,7 @@
     color: #0cbb52 !important;
 }
 .btn-invite {
-    background-color:#2873be ;
+    background-color:tomato ;
     padding: 5px 6px;
     color: white;
     border-radius: 4px;
@@ -55,8 +55,11 @@
     box-sizing: border-box;
     display: inline-flex;
     justify-content: center;
-    color: #6b6b6b;
+    color: #ffffff;
     cursor: pointer;
     line-height: 16px;
     align-items: center;
+}
+.status-icon {
+    color: #646464;
 }

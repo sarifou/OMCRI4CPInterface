@@ -1,0 +1,151 @@
+.container {
+    padding: 20px;
+    width: calc(100vw - 100px);
+    color: #302f2f;
+    box-sizing: border-box;
+}
+.process-container {
+    display: flex;
+    flex-direction: row;
+}
+.first-col {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.second-col {
+    width: 70%;
+}
+.card-orders {
+    display: flex;
+    flex-direction: column;
+    word-wrap: break-word;
+    height: 100%;
+    box-sizing: border-box;
+}
+.card-orders-header {
+    padding:  8px 15px;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+.title {
+    margin-bottom: 0;
+}
+.text {
+    color: #919191;
+    font-size: 0.75rem;
+    margin-top: 1px;
+}
+.btn-list {
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+.btn-item {
+    box-sizing: border-box;
+    display: list-item;
+}
+.item {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    padding-bottom: 0.25rem;
+    padding-top: 0.25rem;
+    text-decoration: none;
+    color: tomato;
+    font-size: 14px;
+}
+.active {
+    background-color: tomato;
+    color: white;
+    border-radius: 5px;
+}
+.card-orders-body {
+    padding: 1.25rem;
+}
+.table {
+    width: 100%;
+}
+.table-responsive {
+    height: auto;
+    display: block;
+    width: 100%;
+}
+.table td {
+    padding: 0.75rem;
+    padding-left: 0 !important;
+    border-top: 1px solid #dee2e6 ;
+    vertical-align: middle !important;
+}
+.order {
+    font-size: 15px;
+    font-weight: 600;
+    color: tomato;
+    margin-bottom: 00.25rem;
+    text-decoration: none;
+}
+.receiver span{
+    color: #3f4254;
+    font-weight: 600;
+}
+.receiver .name {
+    color: #919191;
+    text-decoration: none;
+    font-size: 13px;
+}
+.date  {
+    text-align: center;
+    vertical-align: middle;
+    font-size: 15px;
+    font-weight: 600;
+}
+.date span {
+    display: block;
+}
+.hour {
+    color: gray;
+}
+.status {
+    text-align: center;
+    font-weight: 600;
+    font-size: 15px;
+}
+.in-progress {
+    color: cadetblue;
+}
+.finish {
+    color: rgb(20, 175, 54);
+}
+.interrupted {
+    color: rgb(211, 48, 48);
+}
+.action {
+    text-align: center;
+}
+.action-contain {
+    padding: 0.3rem 0.3rem;
+    line-height: 1.5;
+    border-radius: 5px;
+    background-color: #F3F6F9 ;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    font-size: 18px;
+}
+.see {
+    color: cadetblue;
+}
+.trash {
+    color : rgb(199, 68, 68) ;
+}
+.update {
+    color: salmon;
+}

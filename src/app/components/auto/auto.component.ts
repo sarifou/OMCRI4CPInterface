@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MartRequestService } from 'src/app/services/mart/mart-request.service'
 
 @Component({
   selector: 'app-auto',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AutoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private martRequest : MartRequestService) { }
 
   ngOnInit(): void {
+    this.martRequest.getAllResources().subscribe((data : any) => {
+      console.log(data)
+    })
   }
 
 }

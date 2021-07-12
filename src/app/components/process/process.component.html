@@ -8,7 +8,29 @@
                 <h3 class="title">New process</h3>
             </div>
             <div class="new-process-container">
-                
+                <form class="process-form">
+                    <mat-form-field class="input-full-width" appearance="outline">
+                      <mat-label>Receiver name</mat-label>
+                      <input matInput placeholder="" value="">
+                    </mat-form-field>
+                    <mat-form-field class="input-full-width" appearance="outline">
+                        <mat-label>Favorite food</mat-label>
+                        <input matInput placeholder="Ex. Pizza" value="Sushi">
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label>Start Date</mat-label>
+                        <input type="date" matInput placeholder="Ex. Pizza" value="Sushi">
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Priority</mat-label>
+                        <select matNativeControl required>
+                          <option value="hight">Hight</option>
+                          <option value="medium">Medium</option>
+                          <option value="low">Low</option>
+                        </select>
+                      </mat-form-field>
+                  </form>
+                <button mat-stroked-button>Submit</button>
             </div>
             <div class="stats">
                 <h3 class="title">Trafic in this week</h3>

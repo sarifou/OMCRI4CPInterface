@@ -14,6 +14,10 @@ import { SimulatorComponent } from './components/simulator/simulator.component';
 import { HistoryComponent } from './components/history/history.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatDialogModule } from '@angular/material/dialog';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +34,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatInputModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

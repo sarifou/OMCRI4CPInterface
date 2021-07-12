@@ -14,6 +14,8 @@ import { SimulatorComponent } from './components/simulator/simulator.component';
 import { HistoryComponent } from './components/history/history.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -37,7 +39,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     BrowserAnimationsModule,
     MatButtonModule,
     MatInputModule,
-    MatDialogModule
+    MatDialogModule,
+    NgxChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

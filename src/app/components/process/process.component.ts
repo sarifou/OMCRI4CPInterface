@@ -9,7 +9,21 @@ import { Component, OnInit } from '@angular/core';
 export class ProcessComponent implements OnInit {
 
   orders = [] as any ;
+  data: any[] = [];
+  view: any[] = [200, 100];
 
+  // options
+  showLabels: boolean = true;
+  animations: boolean = true;
+  xAxis: boolean = true;
+  yAxis: boolean = true;
+  showYAxisLabel: boolean = true;
+  showXAxisLabel: boolean = true;
+  timeline: boolean = true;
+
+  colorScheme = {
+    domain: ['#ff6347']
+  };
   constructor() {
     this.orders = [
       {
@@ -94,9 +108,54 @@ export class ProcessComponent implements OnInit {
         "final_hour" : "10h24"
       }
     ]
+    this.data =  [
+      {
+        "name": "Orders",
+        "series": [
+          {
+            "name": "Monday",
+            "value": 25
+          },
+          {
+            "name": "Tuesday",
+            "value": 100
+          },
+          {
+            "name": "Wednesday",
+            "value": 120
+          },
+          {
+            "name": "Friday",
+            "value": 250
+          },
+          {
+            "name": "Saturday",
+            "value": 30
+          },
+          {
+            "name": "Sunday",
+            "value": 0
+          }
+        ]
+      }  
+  
+    ];
+    
    }
 
   ngOnInit(): void {
+  }
+
+  onSelect(data: any): void {
+    console.log('Item clicked', JSON.parse(JSON.stringify(data)));
+  }
+
+  onActivate(data: any): void {
+    console.log('Activate', JSON.parse(JSON.stringify(data)));
+  }
+
+  onDeactivate(data: any): void {
+    console.log('Deactivate', JSON.parse(JSON.stringify(data)));
   }
 
 }

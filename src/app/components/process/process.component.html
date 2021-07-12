@@ -14,26 +14,35 @@
                       <input matInput placeholder="" value="">
                     </mat-form-field>
                     <mat-form-field class="input-full-width" appearance="outline">
-                        <mat-label>Favorite food</mat-label>
-                        <input matInput placeholder="Ex. Pizza" value="Sushi">
+                        <mat-label>Order description</mat-label>
+                        <input type="text" matInput placeholder="">
                     </mat-form-field>
-                    <mat-form-field class="example-full-width" appearance="outline">
-                        <mat-label>Start Date</mat-label>
-                        <input type="date" matInput placeholder="Ex. Pizza" value="Sushi">
-                    </mat-form-field>
-                    <mat-form-field appearance="outline">
-                        <mat-label>Priority</mat-label>
-                        <select matNativeControl required>
-                          <option value="hight">Hight</option>
-                          <option value="medium">Medium</option>
-                          <option value="low">Low</option>
-                        </select>
-                      </mat-form-field>
+                    <div class="form-row">
+                        <mat-form-field class="example-full-width" appearance="outline">
+                            <mat-label>Start Date</mat-label>
+                            <input type="date" matInput placeholder="Ex. Pizza" value="Sushi">
+                        </mat-form-field>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Priority</mat-label>
+                            <select matNativeControl required>
+                              <option value="high">High</option>
+                              <option value="medium">Medium</option>
+                              <option value="low">Low</option>
+                            </select>
+                        </mat-form-field>
+                    </div>
                   </form>
                 <button mat-stroked-button>Submit</button>
             </div>
             <div class="stats">
                 <h3 class="title">Trafic in this week</h3>
+                <div class="chart">
+                    <ngx-charts-line-chart [scheme]="colorScheme" [showXAxisLabel]="showXAxisLabel" [showYAxisLabel]="showYAxisLabel" [xAxis]="xAxis" [yAxis]="yAxis" [timeline]="timeline" [results]="data"
+                    (select)="onSelect($event)"
+                    (activate)="onActivate($event)"
+                    (deactivate)="onDeactivate($event)">
+                    </ngx-charts-line-chart>
+                </div>
             </div>
         </div>
         <div class="second-col">

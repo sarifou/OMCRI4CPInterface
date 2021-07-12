@@ -11,9 +11,6 @@ export class AutoComponent implements OnInit {
   constructor(private martRequest : MartRequestService) { }
 
   ngOnInit(): void {
-    this.martRequest.getAllResources().subscribe((data : any) => {
-      console.log(data)
-    })
   }
 
 }

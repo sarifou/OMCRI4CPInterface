@@ -12,6 +12,7 @@ import { ConsoleComponent } from './components/console/console.component';
 import { HeaderComponent } from './components/header/header.component';
 import { SimulatorComponent } from './components/simulator/simulator.component';
 import { HistoryComponent } from './components/history/history.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { HistoryComponent } from './components/history/history.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

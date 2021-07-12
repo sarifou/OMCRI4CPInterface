@@ -8,6 +8,15 @@
     display: flex;
     flex-direction: row;
 }
+.process {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    i {
+        margin-right: 5px;
+    }
+}
 .first-col {
     width: 30%;
     height: 100%;

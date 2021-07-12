@@ -1,0 +1,41 @@
+* {
+    box-sizing: border-box;
+}
+.drive-container {
+    padding: 20px;
+    width: calc(100vw - 100px);
+}
+.device-container {
+    border: solid 2px gray;
+    border-radius: 5px;
+    height: 800px;
+}
+.accessories-container {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    text-align: center;
+    margin: auto;
+}
+.accessories-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.train-speed {
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+    margin: auto;
+    text-align: center;
+}
+.train-mat-slider {
+    width: 800px;
+}
+.train-gauge-container {
+    padding-top: 20px;
+    height: 300px;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}

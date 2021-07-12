@@ -1,1 +1,79 @@
-<p>Comming Soon</p>
+<div class="drive-container">
+    <div class="drive-select">
+        <mat-form-field appearance="outline">
+            <mat-label>Select your device</mat-label>
+            <select matNativeControl required>
+              <option value="agv">agv</option>
+              <option value="train">train</option>
+              <option value="drone">drone</option>
+              <option value="crane">crane</option>
+            </select>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>User</mat-label>
+            <input matInput>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Password</mat-label>
+            <input matInput>
+        </mat-form-field>
+    </div>
+    <div class="device-container">
+        <div class="camera">
+
+        </div>
+        <div class="control">
+            <div class="train" *ngIf="device=='train'">
+                <div class="accessories-container">
+                    <div class="accessories-title">
+                        <h3>Accessories</h3>
+                    </div>
+                    <div class="accessories-item">
+                        <div class="item">
+                            <mat-slide-toggle>Klaxon</mat-slide-toggle>
+                        </div>
+                        <div class="item">
+                            <mat-slide-toggle>Light</mat-slide-toggle>
+                        </div>
+                        <div class="item">
+                            <mat-slide-toggle>Noise</mat-slide-toggle>
+                        </div>
+                    </div>
+                </div>
+                <div class="train-speed">
+                    <div class="train-slider">
+                        <div class="train-gauge-container">
+                            <ngx-charts-gauge
+                        [scheme]="colorScheme"
+                        [results]="single"
+                        (select)="onSelect($event)"
+                        (activate)="onActivate($event)"
+                        (deactivate)="onDeactivate($event)"
+                        [min]="min"
+                        [max]="max"
+                        >
+                        </ngx-charts-gauge>
+                        </div>
+                        <mat-slider class="train-mat-slider" thumbLabel [displayWith]="formatLabel" tickInterval="1" step="1" min="0" max="20" aria-label="units"></mat-slider>
+                    </div>
+                    <div class="train-speed-btn">
+                        <button mat-stroked-button color="primary">Start</button>
+                        <button mat-stroked-button color="accent">Reverse</button>
+                        <button mat-stroked-button color="warn">Stop</button>
+                    </div>
+                </div>
+            </div>
+            <div class="agv" *ngIf="device=='agv'">
+        
+            </div>
+            <div class="drone" *ngIf="device=='drone'">
+        
+            </div>
+            <div class="crane" *ngIf="device=='crane'">
+        
+            </div>
+        </div>
+        
+    </div>
+    
+</div>

@@ -39,3 +39,91 @@
     flex-direction: row;
     text-align: center;
 }
+.input-agv {
+    width: 85px;
+    
+}
+.agv {
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.agv-camera {
+    text-align: center;
+}
+.agv-control-btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center
+}
+.left-btn, .middle-btn, .right-btn {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.btn {
+    margin: 10px;
+}
+.btn-left-top {
+    transform: rotate(45deg);
+}
+.btn-left-bottom {
+    transform: rotate(-45deg);
+}
+.btn-turn-left, .btn-turn-right {
+    width: 100px;
+}
+.speed-label {
+    padding-top: 20px;
+    height: 250px;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+.agv-mat-slider {
+    width: 500px;
+}
+.agv-sensors , .agv-monitor {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 400px;
+}
+.arm-form {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+}
+.arm-input {
+    text-align: center;
+}
+.agv-arm-monitor {
+    width: 100%;
+    text-align: center;
+}
+.line-item {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+}
+.agv-line-sensors, .agv-ultrasound, .agv-battery {
+    width: 100%;
+}
+.tag {
+    color: gray;
+    font-size: 12px;
+}
+.value {
+    font-size: 14px;
+    font-weight: 600;
+}

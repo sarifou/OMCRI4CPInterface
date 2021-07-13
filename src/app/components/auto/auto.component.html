@@ -19,9 +19,6 @@
         </mat-form-field>
     </div>
     <div class="device-container">
-        <div class="camera">
-
-        </div>
         <div class="control">
             <div class="train" *ngIf="device=='train'">
                 <div class="accessories-container">
@@ -64,7 +61,133 @@
                 </div>
             </div>
             <div class="agv" *ngIf="device=='agv'">
-        
+                <div class="agv-monitor">
+                    <div class="agv-monitor-btn">
+                       
+                    </div>
+                    <div class="agv-arm-monitor">
+                        <h4 class="agv-title">Arm Control</h4>
+                        <div class="gripper">Open <mat-slide-toggle>Close</mat-slide-toggle></div>
+                        <div class="arm-input">
+                            <h4 class="agv-title">Go to coordinate</h4>
+                            <form class="arm-form">
+                                <mat-form-field class="input-agv" appearance="outline">
+                                  <mat-label>X</mat-label>
+                                  <input matInput type="number">
+                                </mat-form-field>
+                                <mat-form-field class="input-agv" appearance="outline">
+                                  <mat-label>Y</mat-label>
+                                  <input matInput type="number">
+                                </mat-form-field>
+                                <mat-form-field class="input-agv" appearance="outline">
+                                    <mat-label>Z</mat-label>
+                                    <input matInput type="number">
+                                </mat-form-field>
+                              </form>
+                              <button mat-stroked-button >Go to position</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="agv-middle-container">
+                    <div class="agv-camera">
+                        <img src="/assets/img/nosignal.jpg" height="250px" width="500px">
+                    </div>
+                    <div class="agv-speed">
+                        <div class="speed-label">
+                                <ngx-charts-gauge
+                            [scheme]="colorScheme"
+                            [results]="single"
+                            (select)="onSelect($event)"
+                            (activate)="onActivate($event)"
+                            (deactivate)="onDeactivate($event)"
+                            [min]="min"
+                            [max]="max"
+                            >
+                            </ngx-charts-gauge>
+                        </div>
+                        <div class="speed-slider">
+                            <mat-slider class="agv-mat-slider" thumbLabel [displayWith]="formatLabel" tickInterval="1" step="1" min="0" max="20" aria-label="units"></mat-slider>
+                        </div>
+                    </div>
+                    <div class="agv-control-btn">
+                        <button class="btn btn-turn-left" mat-fab color="blue" aria-label="Example icon button with a filter list icon">
+                            <mat-icon>undo</mat-icon>
+                        </button>
+                        <div class="left-btn">
+                            <button class="btn btn-left-top" mat-mini-fab color="blue" aria-label="Example icon button with a filter list icon">
+                                <mat-icon>chevron_left</mat-icon>
+                            </button>
+                            <button class="btn" mat-stroked-button >
+                                <mat-icon>chevron_left</mat-icon>
+                            </button>
+                            <button class="btn btn-left-bottom" mat-mini-fab color="blue" aria-label="Example icon button with a filter list icon">
+                                <mat-icon>chevron_left</mat-icon>
+                            </button>
+                        </div>
+                        <div class="middle-btn">
+                            <button class="btn" mat-stroked-button >
+                                <mat-icon>expand_less</mat-icon>
+                            </button>
+                            <button class="btn" mat-mini-fab color="blue" aria-label="Example icon button with a filter list icon">
+                                <mat-icon>flip</mat-icon>
+                            </button>
+                            <button class="btn" mat-stroked-button >
+                                <mat-icon>expand_more</mat-icon>
+                            </button>
+                        </div>
+                        <div class="right-btn">
+                            <button class="btn btn-left-bottom" mat-mini-fab color="blue" aria-label="Example icon button with a filter list icon">
+                                <mat-icon>chevron_right</mat-icon>
+                            </button>
+                            <button class="btn" mat-stroked-button >
+                                <mat-icon>chevron_right</mat-icon>
+                            </button>
+                            <button class="btn btn-left-top" mat-mini-fab color="blue" aria-label="Example icon button with a filter list icon">
+                                <mat-icon>chevron_right</mat-icon>
+                            </button>
+                        </div>
+                        <button class="btn btn-turn-right" mat-fab color="blue" aria-label="Example icon button with a filter list icon">
+                            <mat-icon>redo</mat-icon>
+                        </button>
+                    </div>
+                </div>
+                <div class="agv-sensors">
+                    <div class="agv-sensors-headers">
+                        <h4>Sensors</h4>
+                    </div>
+                    <div class="agv-line-sensors">
+                        <h5>Line Sensors</h5>
+                        <div class="line-item">
+                            <div class="item">
+                                <span class="value">92.0</span>
+                                <p class="tag">line right</p>
+                            </div>
+                            <div class="item">
+                                <span class="value">92.0</span>
+                                <p class="tag">line right</p>
+                            </div>
+                            <div class="item">
+                                <span class="value">92.0</span>
+                                <p class="tag">line right</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="agv-ultrasound">
+                        <h5>Ultrasound</h5>
+                        <div class="item">
+                            <span class="value">92.0</span>
+                            <p class="tag"></p>
+                        </div>
+                    </div>
+                    <div class="agv-battery">
+                        <h5>Battery</h5>
+                        <div class="item">
+                            <span class="value">75%</span>
+                            <p class="tag">
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="drone" *ngIf="device=='drone'">
         

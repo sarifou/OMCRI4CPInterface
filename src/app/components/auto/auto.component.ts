@@ -25,7 +25,7 @@ export class AutoComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.device = "train";
+    this.device = "agv";
     this.single = [
       {
         "name": "speed",

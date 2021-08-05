@@ -8,7 +8,9 @@ import { MartRequestService } from 'src/app/services/mart/mart-request.service'
 })
 export class AutoComponent implements OnInit {
 
+  BASE_URL = 'http://localhost:8080';
   device : any ;
+  listDevice : any[] = [];
   single : any[] = [];
   view: any[] = [500, 400];
   legend: boolean = true;
@@ -25,6 +27,10 @@ export class AutoComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.martRequest.getAllResources().subscribe(data=> {
+      this.listDevice = data.resources ;
+      console.log(this.listDevice);
+    })
     this.device = "agv";
     this.single = [
       {
@@ -32,6 +38,29 @@ export class AutoComponent implements OnInit {
         "value": 20
       }
     ];
+    const body = {
+      "title": "AGVTEST",
+      "summary": "AGV for test",
+      "kind": "http://cristal.org/omcri4cp/agv#agv",
+      "attributes": {
+          "user" : "cherif",
+          "ip": "127.0.0.1",
+          "port": 9090
+      }
+  }
+
+  /*
+    this.martRequest.createResource("http://localhost:8080/port/agv", body).subscribe(
+      response => {
+        console.log(response);
+      },
+      error => {
+        console.log(error)
+      },
+      () => {
+        console.log("Process Completed")
+      }
+    )*/
   }
 
   formatLabel(value: number) {
@@ -52,6 +81,22 @@ export class AutoComponent implements OnInit {
 
   onDeactivate(data: any): void {
     console.log('Deactivate', JSON.parse(JSON.stringify(data)));
+  }
+
+  onAction(type: string){
+    console.log(type);
+    const url = this.BASE_URL+this.listDevice[0].location;
+    console.log(url);
+    let link : any;
+    this.listDevice[0].actions.forEach((element:any) => {
+      if(element.includes('#'+type)) {
+        link = element;
+        console.log(link);
+      }
+    });
+    this.martRequest.runAction(url, link, type).subscribe(response => {
+      console.log(response);
+    })
   }
 
 }

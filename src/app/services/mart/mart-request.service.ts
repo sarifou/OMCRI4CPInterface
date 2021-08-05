@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { map , catchError } from 'rxjs/operators';
+
 
 @Injectable({
   providedIn: 'root'
@@ -10,14 +13,38 @@ export class MartRequestService {
   httpOptions = {
     headers: new HttpHeaders ({
       'Accept' : 'application/json',
-      'Content-Type' : 'application/json',
+      'content-Type' : 'application/json',
       'Access-Control-Allow-Origin' : '*'
     })
   }
   constructor(private httpClient : HttpClient) { }
 
+  // Method to create resource
+  createResource(baseURL : string, body : any ) {
+    return this.httpClient.put(baseURL, body, this.httpOptions);
+  }
   // Get all resources
   getAllResources() {
-    return this.httpClient.get(this.ROOT_URL, this.httpOptions)
+    return this.httpClient.get<any>(this.ROOT_URL, this.httpOptions);
+  }
+  // Function to run action
+  runAction(url: string, link: string, action: string) {
+    const headers = { 
+      'Accept' : 'application/json',
+      'content-Type' : 'application/json',
+      'Access-Control-Allow-Origin' : '*'
+    };
+    let params = new HttpParams().append("action", action)
+    const body = {
+      "action" : link
+    };
+    const body_ = JSON.stringify(body);
+    return this.httpClient.post(url, body_, {'headers':headers, 'params' : params})
+  }
+  setAttributes(id : String, attribute : String) {
+
+  }
+  deleteRessource() {
+
   }
 }

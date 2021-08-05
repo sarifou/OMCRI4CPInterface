@@ -2,11 +2,8 @@
     <div class="drive-select">
         <mat-form-field appearance="outline">
             <mat-label>Select your device</mat-label>
-            <select matNativeControl required>
-              <option value="agv">agv</option>
-              <option value="train">train</option>
-              <option value="drone">drone</option>
-              <option value="crane">crane</option>
+            <select matNativeControl required >
+              <option *ngFor="let item of listDevice" [value]="item.title">{{item.title}}:{{item.id}}</option>
             </select>
         </mat-form-field>
         <mat-form-field class="example-full-width" appearance="outline">
@@ -110,25 +107,25 @@
                         </div>
                     </div>
                     <div class="agv-control-btn">
-                        <button class="btn btn-turn-left" mat-fab color="blue" aria-label="Example icon button with a filter list icon">
+                        <button class="btn btn-turn-left" mat-fab color="blue">
                             <mat-icon>undo</mat-icon>
                         </button>
                         <div class="left-btn">
-                            <button class="btn btn-left-top" mat-mini-fab color="blue" aria-label="Example icon button with a filter list icon">
+                            <button class="btn btn-left-top" mat-mini-fab color="blue">
                                 <mat-icon>chevron_left</mat-icon>
                             </button>
                             <button class="btn" mat-stroked-button >
                                 <mat-icon>chevron_left</mat-icon>
                             </button>
-                            <button class="btn btn-left-bottom" mat-mini-fab color="blue" aria-label="Example icon button with a filter list icon">
+                            <button class="btn btn-left-bottom" mat-mini-fab color="blue">
                                 <mat-icon>chevron_left</mat-icon>
                             </button>
                         </div>
                         <div class="middle-btn">
-                            <button class="btn" mat-stroked-button >
+                            <button class="btn" (click)="onAction('forward')" mat-stroked-button >
                                 <mat-icon>expand_less</mat-icon>
                             </button>
-                            <button class="btn" mat-mini-fab color="blue" aria-label="Example icon button with a filter list icon">
+                            <button class="btn btn-connect" (click)="onAction('connect')" mat-mini-fab color="blue">
                                 <mat-icon>flip</mat-icon>
                             </button>
                             <button class="btn" mat-stroked-button >
@@ -136,17 +133,17 @@
                             </button>
                         </div>
                         <div class="right-btn">
-                            <button class="btn btn-left-bottom" mat-mini-fab color="blue" aria-label="Example icon button with a filter list icon">
+                            <button class="btn btn-left-bottom" mat-mini-fab color="blue">
                                 <mat-icon>chevron_right</mat-icon>
                             </button>
                             <button class="btn" mat-stroked-button >
                                 <mat-icon>chevron_right</mat-icon>
                             </button>
-                            <button class="btn btn-left-top" mat-mini-fab color="blue" aria-label="Example icon button with a filter list icon">
+                            <button class="btn btn-left-top" mat-mini-fab color="blue">
                                 <mat-icon>chevron_right</mat-icon>
                             </button>
                         </div>
-                        <button class="btn btn-turn-right" mat-fab color="blue" aria-label="Example icon button with a filter list icon">
+                        <button class="btn btn-turn-right" mat-fab color="blue">
                             <mat-icon>redo</mat-icon>
                         </button>
                     </div>

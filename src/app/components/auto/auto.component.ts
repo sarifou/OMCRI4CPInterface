@@ -19,6 +19,9 @@ export class AutoComponent implements OnInit {
   min : number = 0;
   max : number = 20;
 
+  //Variable for AGV
+  agvSpeedValue = 2 ;
+
   colorScheme = {
     domain: ['#5AA454', '#E44D25', '#CFC0BB', '#7aa3e5', '#a8385d', '#aae3f5']
   };
@@ -28,7 +31,7 @@ export class AutoComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.martRequest.getAllResources().subscribe(data=> {
+    this.martRequest.getAllResources().subscribe(data => {
       this.listDevice = data.resources ;
       console.log(this.listDevice);
     })
@@ -116,5 +119,22 @@ export class AutoComponent implements OnInit {
     }
     
   }
-
+  onAttribute(attribute: string ,value: any) {
+    if(typeof this.deviceSelected !== "undefined"){
+      const url = this.BASE_URL+this.listDevice[this.deviceSelected].location;
+      const kind = this.listDevice[this.deviceSelected].kind;
+      console.log(url);
+      console.log(kind);
+      
+      this.martRequest.setAttribute(url,kind,attribute,value).subscribe(response => {
+        console.log(response);
+      })
+    } else {
+      console.log("Select device before")
+    }
+  }
+  agvSpeed() {
+    console.log(this.agvSpeedValue);
+    this.onAttribute('speed.linear', this.agvSpeedValue);
+  }
 }

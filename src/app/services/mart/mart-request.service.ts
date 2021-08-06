@@ -41,8 +41,20 @@ export class MartRequestService {
     const body_ = JSON.stringify(body);
     return this.httpClient.post(url, body_, {'headers':headers, 'params' : params})
   }
-  setAttributes(id : String, attribute : String) {
-
+  // Function to update attribute
+  setAttribute(url: string, kind : String, attribute : string, value : any) {
+    var body : {[key : string] : any} = {};
+    body["kind"] = kind ;
+    body["attributes"] = {}
+    body["attributes"][attribute] = value;
+    /*let body = {
+      "kind" : kind,
+      "attributes": {}
+    }
+    body.attributes[attribute] = value ;*/
+    const body_ = JSON.stringify(body);
+    console.log(body_);
+    return this.httpClient.post(url, body_, this.httpOptions);
   }
   deleteRessource() {
 

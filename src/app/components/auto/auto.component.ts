@@ -11,6 +11,7 @@ export class AutoComponent implements OnInit {
   BASE_URL = 'http://localhost:8080';
   device : any ;
   listDevice : any[] = [];
+  deviceSelected : any;
   single : any[] = [];
   view: any[] = [500, 400];
   legend: boolean = true;
@@ -60,6 +61,17 @@ export class AutoComponent implements OnInit {
       () => {
         console.log("Process Completed")
       }
+    )
+    this.martRequest.createResource("http://localhost:8080/port/agv2", body).subscribe(
+      response => {
+        console.log(response);
+      },
+      error => {
+        console.log(error)
+      },
+      () => {
+        console.log("Process Completed")
+      }
     )*/
   }
 
@@ -84,19 +96,25 @@ export class AutoComponent implements OnInit {
   }
 
   onAction(type: string){
-    console.log(type);
-    const url = this.BASE_URL+this.listDevice[0].location;
-    console.log(url);
-    let link : any;
-    this.listDevice[0].actions.forEach((element:any) => {
-      if(element.includes('#'+type)) {
-        link = element;
-        console.log(link);
-      }
-    });
-    this.martRequest.runAction(url, link, type).subscribe(response => {
-      console.log(response);
-    })
+    if(typeof this.deviceSelected !== "undefined"){
+      //console.log(this.deviceSelected);
+      //console.log(type);
+      const url = this.BASE_URL+this.listDevice[this.deviceSelected].location;
+      //console.log(url);
+      let link : any;
+      this.listDevice[this.deviceSelected].actions.forEach((element:any) => {
+        if(element.includes('#'+type)) {
+          link = element;
+          console.log(link);
+        }
+      });
+      this.martRequest.runAction(url, link, type).subscribe(response => {
+        //console.log(response);
+      })
+    } else {
+      console.log("Select device before")
+    }
+    
   }
 
 }

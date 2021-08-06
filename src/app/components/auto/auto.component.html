@@ -2,8 +2,8 @@
     <div class="drive-select">
         <mat-form-field appearance="outline">
             <mat-label>Select your device</mat-label>
-            <select matNativeControl required >
-              <option *ngFor="let item of listDevice" [value]="item.title">{{item.title}}:{{item.id}}</option>
+            <select matNativeControl required [(ngModel)]="deviceSelected">
+              <option *ngFor="let item of listDevice; let index = index" [value]="index">{{index}}:{{item.title}}</option>
             </select>
         </mat-form-field>
         <mat-form-field class="example-full-width" appearance="outline">

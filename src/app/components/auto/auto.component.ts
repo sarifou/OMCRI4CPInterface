@@ -101,18 +101,19 @@ export class AutoComponent implements OnInit {
   onAction(type: string){
     if(typeof this.deviceSelected !== "undefined"){
       //console.log(this.deviceSelected);
-      //console.log(type);
       const url = this.BASE_URL+this.listDevice[this.deviceSelected].location;
       //console.log(url);
       let link : any;
       this.listDevice[this.deviceSelected].actions.forEach((element:any) => {
-        if(element.includes('#'+type)) {
+        //console.log(element.length)
+        //console.log(element.indexOf(type))
+        if(element.includes('#'+type) && (element.length - element.indexOf(type) == type.length )) {
           link = element;
           console.log(link);
         }
       });
       this.martRequest.runAction(url, link, type).subscribe(response => {
-        //console.log(response);
+        console.log(response);
       })
     } else {
       console.log("Select device before")

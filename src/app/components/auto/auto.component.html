@@ -118,17 +118,17 @@
                         </div>
                     </div>
                     <div class="agv-control-btn">
-                        <button class="btn btn-turn-left" mat-fab color="blue">
+                        <button class="btn btn-turn-left" (mousedown)="onAction('turn_left')" (mouseup)="onAction('stop')" mat-fab color="blue">
                             <mat-icon>undo</mat-icon>
                         </button>
                         <div class="left-btn">
-                            <button class="btn btn-left-top" mat-mini-fab color="blue">
+                            <button class="btn btn-left-top" (mousedown)="onAction('left_up')" (mouseup)="onAction('stop')" mat-mini-fab color="blue">
                                 <mat-icon>chevron_left</mat-icon>
                             </button>
-                            <button class="btn" mat-stroked-button >
+                            <button class="btn" (mousedown)="onAction('left')" (mouseup)="onAction('stop')" mat-stroked-button >
                                 <mat-icon>chevron_left</mat-icon>
                             </button>
-                            <button class="btn btn-left-bottom" mat-mini-fab color="blue">
+                            <button class="btn btn-left-bottom" (mousedown)="onAction('left_bottom')" (mouseup)="onAction('stop')" mat-mini-fab color="blue">
                                 <mat-icon>chevron_left</mat-icon>
                             </button>
                         </div>
@@ -139,22 +139,22 @@
                             <button class="btn btn-connect" (click)="onAction('connect')" mat-mini-fab color="blue">
                                 <mat-icon>flip</mat-icon>
                             </button>
-                            <button class="btn" mat-stroked-button >
+                            <button class="btn" (mousedown)="onAction('backward')" (mouseup)="onAction('stop')" mat-stroked-button >
                                 <mat-icon>expand_more</mat-icon>
                             </button>
                         </div>
                         <div class="right-btn">
-                            <button class="btn btn-left-bottom" mat-mini-fab color="blue">
+                            <button class="btn btn-left-bottom" (mousedown)="onAction('right_up')" (mouseup)="onAction('stop')" mat-mini-fab color="blue">
                                 <mat-icon>chevron_right</mat-icon>
                             </button>
-                            <button class="btn" mat-stroked-button >
+                            <button class="btn" (mousedown)="onAction('right')" (mouseup)="onAction('stop')" mat-stroked-button >
                                 <mat-icon>chevron_right</mat-icon>
                             </button>
-                            <button class="btn btn-left-top" mat-mini-fab color="blue">
+                            <button class="btn btn-left-top" (mousedown)="onAction('right_bottom')" (mouseup)="onAction('stop')" mat-mini-fab color="blue">
                                 <mat-icon>chevron_right</mat-icon>
                             </button>
                         </div>
-                        <button class="btn btn-turn-right" mat-fab color="blue">
+                        <button class="btn btn-turn-right" (mousedown)="onAction('turn_right')" (mouseup)="onAction('stop')" mat-fab color="blue">
                             <mat-icon>redo</mat-icon>
                         </button>
                     </div>

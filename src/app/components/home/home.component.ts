@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +9,12 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   process = [] as any ;
-  constructor() { 
+  httpOptions = {
+    headers: new HttpHeaders ({
+      'Access-Control-Allow-Origin' : '*'
+    })
+  }
+  constructor(private client: HttpClient) { 
     this.process = [
       {
         "id" : 1002012,
@@ -68,6 +74,9 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    /*this.client.get("http://localhost:8585/stream?topic=/usb_cam/image_raw", this.httpOptions).subscribe(response=>{
+      console.log(response)
+    })*/
   }
 
 }

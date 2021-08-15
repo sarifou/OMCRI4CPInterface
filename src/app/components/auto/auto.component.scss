@@ -8,7 +8,10 @@
 .device-container {
     border: solid 2px gray;
     border-radius: 5px;
-    height: 800px;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-image: url("http://localhost:8585/stream?topic=/usb_cam/image_raw");
+    background-size: 100% 100%;
 }
 .accessories-container {
     display: flex;

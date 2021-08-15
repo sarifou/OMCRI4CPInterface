@@ -1,14 +1,13 @@
 .sidebar-container {
     height: 100%;
     width: 100px;
-    background-color: #f9f9f9;
+    background-color: #2a363e;
 }
 .list-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    border-right: 1px solid #ededed;
     padding-top: 10px;
 }
 .home-container, .process-container, .simulator-container, .auto-container, .history-container {

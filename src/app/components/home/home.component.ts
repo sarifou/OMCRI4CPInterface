@@ -9,12 +9,103 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 export class HomeComponent implements OnInit {
 
   process = [] as any ;
+  devices = [] as any ;
   httpOptions = {
     headers: new HttpHeaders ({
       'Access-Control-Allow-Origin' : '*'
     })
   }
   constructor(private client: HttpClient) { 
+    this.devices = [
+      {
+        "title" : "Train",
+        "active" : 10,
+        "total" : 15,
+        "resume" : [
+          {
+            "robot" : "train 1",
+            "charge" : 100,
+            "mode": "auto"
+          },
+          {
+            "robot" : "train 2",
+            "charge" : 67,
+            "mode": "auto"
+          },
+          {
+            "robot" : "train 3",
+            "charge" : 10,
+            "mode": "auto"
+          }
+        ]
+      },
+      {
+        "title" : "AGV",
+        "active" : 10,
+        "total" : 15,
+        "resume" : [
+          {
+            "robot" : "AGV 1",
+            "charge" : 100,
+            "mode": "auto"
+          },
+          {
+            "robot" : "AGV 1",
+            "charge" : 75,
+            "mode": "tele"
+          },
+          {
+            "robot" : "AGV 1",
+            "charge" : 25,
+            "mode": "tele"
+          }
+        ]
+      },
+      {
+        "title" : "Drone",
+        "active" : 10,
+        "total" : 15,
+        "resume" : [
+          {
+            "robot" : "Drone 1",
+            "charge" : 25,
+            "mode": "auto"
+          },
+          {
+            "robot" : "Drone 1",
+            "charge" : 75,
+            "mode": "tele"
+          },
+          {
+            "robot" : "Drone 1",
+            "charge" : 100,
+            "mode": "auto"
+          }
+        ]
+      },
+      {
+        "title" : "Crane",
+        "active" : 10,
+        "total" : 15,
+        "resume" : [
+          {
+            "robot" : "Crane 1",
+            "charge" : 100,
+            "mode": "auto"
+          },
+          {
+            "robot" : "Crane 1",
+            "charge" : 100,
+            "mode": "auto"
+          },
+          {
+            "robot" : "Crane 1",
+            "charge" : 100,
+            "mode": "auto"
+          }
+        ]
+      }
+    ]
     this.process = [
       {
         "id" : 1002012,

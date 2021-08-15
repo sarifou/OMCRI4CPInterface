@@ -1,4 +1,4 @@
-<div class="container">
+<!--div class="container">
     <div class="first-col">
         <div class="description">
             <div class="title">
@@ -132,6 +132,104 @@
         </div>
         <div class="simulator-snapshot">
             <img src="/assets/img/simulator.png" height="500px" width="500px" alt="">
+        </div>
+    </div>
+</div-->
+<div class="container">
+    <div class="header-home">
+        <div class="header-title">
+            <p>Home</p>
+        </div>
+        <div class="header-navigation">
+
+        </div>
+    </div>
+    <div class="card-container">
+        <div class="resume-card">
+            <div class="card">
+                <div class="card-header">
+                    <p>Active Process</p>
+                </div>
+                <div class="card-content">
+                    <p>10 / 15</p>
+                </div>
+                <div class="card-footer">
+                    <p>75%</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <p>Active Robots</p>
+                </div>
+                <div class="card-content">
+                    <p>10 / 15</p>
+                </div>
+                <div class="card-footer">
+                    <p>75%</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <p>Active Sites</p>
+                </div>
+                <div class="card-content">
+                    <p>10 / 15</p>
+                </div>
+                <div class="card-footer">
+                    <p>75%</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <p>Active Process</p>
+                </div>
+                <div class="card-content">
+                    <p>10 / 15</p>
+                </div>
+                <div class="card-footer">
+                    <p>75%</p>
+                </div>
+            </div>
+        </div>
+        <div class="device-card-container">
+            <div class="device-card" *ngFor="let device of devices">
+                <div class="device-card-header title">
+                    <span>{{device.title}}</span>
+                </div>
+                <div class="device-card-content">
+                    <div class="active">
+                        <div class="title">
+                            <span>Active</span>
+                        </div>
+                        <div class="number">
+                            <span>{{device.active}}</span>
+                        </div>
+                    </div>
+                    <div class="total">
+                        <div class="title">
+                            <span>Total</span>
+                        </div>
+                        <div class="number">
+                            <span>{{device.total}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="device-card-footer">
+                    <ul>
+                        <li *ngFor="let item of device.resume">
+                            <div>
+                                <span class="title">{{item.robot}}</span>
+                            </div>
+                            <div>
+                                <span class="title">{{item.charge}}%</span>
+                            </div>
+                            <div>
+                                <span class="title">{{item.mode}}</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </div>

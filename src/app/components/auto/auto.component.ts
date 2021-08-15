@@ -31,6 +31,7 @@ export class AutoComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    /*
     this.martRequest.getAllResources().subscribe(data => {
       this.listDevice = data.resources ;
       console.log(this.listDevice);

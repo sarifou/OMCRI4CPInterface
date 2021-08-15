@@ -1,140 +1,89 @@
-.container {
-    padding: 20px;
-    display: flex;
-    flex-direction: row;
-    width: calc(100vw - 100px);
-    color: #302f2f;
+* {
     box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-.first-col {
-    width: 60%;
+.container {
     display: flex;
     flex-direction: column;
-    padding-right: 50px;
-}
-.second-col {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-.description-msg, .statistics, .user-information {
-    margin-bottom: 30px;
-}
-.description-title {
-    font-weight: 600;
-}
-.description-contain {
-    font-size: 14px;
-    line-height: 20px;
-    text-align: justify;
-    color: rgb(68, 68, 68);
-}
-.title {
-    display: flex;
-    flex-direction: row;
-    justify-content: left;
-    align-items: center;
-}
-.title i {
-    margin-right: 10px;
-}
-.statistics-block {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-right: 50px;
-}
-.statistics-item {
-    display: block;
-}
-.statistic-value {
-    text-align: center;
-    margin: auto;
-    font-size: 14px;
-    color : #212121 ;
-    line-height: 24px;
-}
-.statistic-label {
-    font-size: 11px;
-    line-height: 16px;
-    margin: 0;
-    color: #a6a6a6;
-}
-.user-connected {
-    display: flex;
-    flex-direction: row;
-}
-.user-item {
-    display: flex;
-    flex-direction: row;
-    margin-top: 10px;
-    margin-right: 50px;
-    padding: 8px 0;
-}
-.user-logo {
-    padding: 0 16px 0 8px;
-}
-.user-avatar {
-    border-radius: 50%;
-    height: 40px;
-    width: 40px;
-}
-.user-name {
-    flex : 1;
-}
-.user-text-name p {
-    margin: 0;
-    padding: 0;
-    font-size: 13px;
-}
-.user-text-attribut p {
-    font-size: 11px;
-    color: tomato;
-}
-.item {
-    display: flex;
-    padding: 0 8px;
-    height: 40px;
-    align-items: center;
-    cursor: pointer;
-    font-size: 13px;
-}
-.item i {
-    font-size: 20px;
-    margin-right: 10px;
-    color: tomato;
-}
-.recent-process {
+    width: calc(100vw - 100px);
+    color: white;
     height: 100%;
 }
-.recent-process-contain {
-    border: dashed 1px #a6a6a6;
-    border-radius: 5px;
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    max-height: 400px;
-    overflow-y: auto;
+.card-container {
+    height: 100%;
+    padding: 20px;
 }
-.process-item {
+.resume-card, .device-card-container {
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: space-between;
+    margin-bottom: 15px;
+}
+.card:nth-child(1) {
+    background: linear-gradient(270deg, rgba(34,195,44,0.5858718487394958) 0%, rgba(47,61,70,1) 59%);
+}
+.card, .device-card {
+    background-color: #2f3d46;
+    width: 24%;
+    border-radius: .25rem;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+}
+.card-header p, .title {
+    color: #bec2c5;
+    font-weight: 600;
+    margin: 0;
+    margin-top: 2px;
     font-size: 14px;
 }
-.in-progress {
-    color: cadetblue;
+.card-footer p{
+    margin : 0;
+    font-family: 14px;
 }
-.finish {
-    color: rgb(20, 175, 54);
+.card:nth-child(1) .card-content p {
+    color: #22c32c;
 }
-.interrupted {
-    color: rgb(211, 48, 48);
+.card-content p{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 45px;
+    font-weight: 600;
 }
-.simulator-snapshot {
-    padding-bottom: 130px;
+.device-card-header {
+    height: 80px;
 }
-.simulator-snapshot img{
-   height: auto;
-   width: 600px;
+.device-card-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+.active, .total {
+    width: 45%;
+    text-align: center;
+}
+.number {
+    font-weight: 600;
+    font-size: 45px;
+}
+.device-card-footer {
+    margin-top: 10px;
+    border-top: solid 1px #1f2c33;
+}
+.device-card-footer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.device-card-footer li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.device-card-footer li div {
+    width: 32%;
+    text-align: center;
 }

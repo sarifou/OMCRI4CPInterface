@@ -1,1 +1,97 @@
-<p>agv works!</p>
+<div class="image">
+    <img src="/assets/img/capture.png" height="100%" width="100%" alt="">
+</div>
+<div class="contain">
+    <div class="header">
+        <div class="select-device">
+            <div class="select">
+                <i class="fa fa-android"></i>
+                <select>
+                    <option>AGV 120112011</option>
+                    <option>Train 12412546</option>
+                    <option>Train 12475644</option>
+                    <option>Crane 12546988</option>
+                    <option>Crane 51245254</option>
+                </select>
+            </div>
+        </div>
+        <div class="device-info">
+            <a class="connect">
+                <i class="fa fa-wifi"></i>
+            </a>
+            <a class="battery">
+                <i class="fa fa-battery"></i><span>75%</span>
+            </a>
+            <a class="battery">
+                <i class="fa fa-history"></i><span>1h30mn</span>
+            </a>
+        </div>
+    </div>
+    <div class="content">
+        <div class="navigation">
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <span class="title">Localisation</span>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <img src="/assets/img/nav.png" height="150px" width="200px">
+                </div>
+            </div>
+        </div>
+        <div class="agv-control-btn">
+            <button class="btn btn-turn-left" (mousedown)="onAction('turn_left')" (mouseup)="onAction('stop')" mat-mini-fab color="blue">
+                <mat-icon>undo</mat-icon>
+            </button>
+            <div class="left-btn">
+                <button class="btn btn-left-top" (mousedown)="onAction('left_up')" (mouseup)="onAction('stop')" mat-mini-fab color="blue">
+                    <mat-icon>chevron_left</mat-icon>
+                </button>
+                <button class="btn" (mousedown)="onAction('left')" (mouseup)="onAction('stop')" mat-stroked-button >
+                    <mat-icon>chevron_left</mat-icon>
+                </button>
+                <button class="btn btn-left-bottom" (mousedown)="onAction('left_bottom')" (mouseup)="onAction('stop')" mat-mini-fab color="blue">
+                    <mat-icon>chevron_left</mat-icon>
+                </button>
+            </div>
+            <div class="middle-btn">
+                <button class="btn" (mousedown)="onAction('forward')" (mouseup)="onAction('stop')" mat-stroked-button >
+                    <mat-icon>expand_less</mat-icon>
+                </button>
+                <button class="btn btn-connect" (click)="onAction('connect')" mat-mini-fab color="blue">
+                    <mat-icon>flip</mat-icon>
+                </button>
+                <button class="btn" (mousedown)="onAction('backward')" (mouseup)="onAction('stop')" mat-stroked-button >
+                    <mat-icon>expand_more</mat-icon>
+                </button>
+            </div>
+            <div class="right-btn">
+                <button class="btn btn-left-bottom" (mousedown)="onAction('right_up')" (mouseup)="onAction('stop')" mat-mini-fab color="blue">
+                    <mat-icon>chevron_right</mat-icon>
+                </button>
+                <button class="btn" (mousedown)="onAction('right')" (mouseup)="onAction('stop')" mat-stroked-button >
+                    <mat-icon>chevron_right</mat-icon>
+                </button>
+                <button class="btn btn-left-top" (mousedown)="onAction('right_bottom')" (mouseup)="onAction('stop')" mat-mini-fab color="blue">
+                    <mat-icon>chevron_right</mat-icon>
+                </button>
+            </div>
+            <button class="btn btn-turn-right" (mousedown)="onAction('turn_right')" (mouseup)="onAction('stop')" mat-mini-fab color="blue">
+                <mat-icon>redo</mat-icon>
+            </button>
+        </div>
+        <div class="sensor">
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <span class="title">Go to position</span>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <img src="/assets/img/nosignal.jpg" height="150px" width="200px">
+                </div>
+            </div>
+        </div>
+    </div>      
+</div>

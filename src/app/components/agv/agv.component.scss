@@ -1,0 +1,241 @@
+* {
+    box-sizing: border-box;
+}
+.drive-container {
+    height: 100%;
+    position: relative;
+    width: calc(100vw - 100px);
+}
+.image {
+    position: absolute;
+    z-index: 1;
+    top : 0;
+    bottom: 0;
+    width: 100%;
+}
+.contain {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+}
+.header {
+    height: 45px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100%;
+    background-color: rgba(31, 44, 51, 0.7);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.select-device {
+    width: 300px;
+}
+.select {
+    background-color: #1f2c33;
+    height: 30px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 300px;
+}
+.device-info {
+    display: flex;
+    flex-direction: row;
+    width: 500px;
+    justify-content: flex-end;
+}
+.device-info a{
+    margin-left: 15px;
+}
+.connect {
+    background-color: #1f2c33;
+    display: block;
+    border-radius: 50%;
+    font-size: 20px;
+    text-align: center;
+    padding-top: 5px;
+    height: 30px;
+    width: 30px;
+    color: green;
+}
+.select i, .battery i {
+    color: tomato;
+    font-size: 20px;
+}
+.battery {
+    background-color: #1f2c33;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    border-radius: 20px;
+    padding-left: 10px;
+    color: white;
+    font-size: 12px;
+}
+.battery i {
+    margin-right: 5px;
+}
+
+.select select {
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    color: white;
+}
+.select select option {
+    background-color: #1f2c33;
+}
+.card {
+    height: 150px;
+    width: 200px;
+    position : relative;
+    border-radius: 5px;
+}
+.card-header {
+    position: absolute;
+    top: 0;
+    z-index: 10;
+    color: white;
+    display: flex;
+    padding: 3px;
+}
+.card-header .title {
+    font-size: 12px;
+}
+.card-content img {
+    border-radius: 5px;
+}
+.card-content {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}
+
+.accessories-container {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    text-align: center;
+    margin: auto;
+}
+.accessories-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.train-speed {
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+    margin: auto;
+    text-align: center;
+}
+.train-mat-slider {
+    width: 800px;
+}
+.train-gauge-container {
+    padding-top: 20px;
+    height: 300px;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+.agv-control-btn {
+    border-radius: 20px;
+    width: max-content;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center
+}
+.left-btn, .middle-btn, .right-btn {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.btn {
+    margin: 10px;
+    background-color: #1f2c33;
+    border: none;
+    color: wheat;
+}
+.btn-left-top {
+    transform: rotate(45deg);
+}
+.btn-left-bottom {
+    transform: rotate(-45deg);
+}
+
+.speed-label {
+    padding-top: 20px;
+    height: 250px;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+.agv-mat-slider {
+    width: 500px;
+}
+.agv-sensors , .agv-monitor {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 400px;
+}
+.arm-form {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+}
+.arm-input {
+    text-align: center;
+}
+.agv-arm-monitor {
+    width: 100%;
+    text-align: center;
+}
+.line-item {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+}
+.agv-line-sensors, .agv-ultrasound, .agv-battery {
+    width: 100%;
+}
+.tag {
+    color: gray;
+    font-size: 12px;
+}
+.value {
+    font-size: 14px;
+    font-weight: 600;
+}

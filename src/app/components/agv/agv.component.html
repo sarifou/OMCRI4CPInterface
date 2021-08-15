@@ -6,12 +6,8 @@
         <div class="select-device">
             <div class="select">
                 <i class="fa fa-android"></i>
-                <select>
-                    <option>AGV 120112011</option>
-                    <option>Train 12412546</option>
-                    <option>Train 12475644</option>
-                    <option>Crane 12546988</option>
-                    <option>Crane 51245254</option>
+                <select [(ngModel)]="deviceSelected">
+                    <option *ngFor="let device of devices" value="{{device.title}}">{{device.title}}</option>
                 </select>
             </div>
         </div>

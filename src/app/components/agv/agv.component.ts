@@ -1,14 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import { MartRequestService } from 'src/app/services/mart/mart-request.service'
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { MartRequestService } from 'src/app/services/mart/mart-request.service';
+import { TeleopService } from 'src/app/services/teleop/teleop.service';
 @Component({
   selector: 'app-agv',
   templateUrl: './agv.component.html',
   styleUrls: ['./agv.component.scss']
 })
-export class AgvComponent implements OnInit {
+export class AgvComponent implements OnInit, OnDestroy {
   BASE_URL = 'http://localhost:8080';
   device : any ;
-  listDevice : any[] = [];
+  devices : any[] = [];
   deviceSelected : any;
   single : any[] = [];
   view: any[] = [500, 400];
@@ -21,9 +23,23 @@ export class AgvComponent implements OnInit {
   colorScheme = {
     domain: ['#5AA454', '#E44D25', '#CFC0BB', '#7aa3e5', '#a8385d', '#aae3f5']
   };
-  constructor(private martRequest : MartRequestService) { }
+
+  selectedDeviceSub: Subscription = new Subscription;
+  devicesSub : Subscription = new Subscription ;
+  constructor(private martRequest : MartRequestService, private teleop : TeleopService) { 
+    this.selectedDeviceSub = this.teleop.subSelectedDevice.subscribe(response => {
+      this.deviceSelected = response;
+    })
+    this.devicesSub = this.teleop.subDevices.subscribe(response => {
+      this.devices = response ;
+    })
+  }
 
   ngOnInit(): void {
+   
+  }
+  ngOnDestroy() : void {
+
   }
   formatLabel(value: number) {
     if (value >= 1000) {
@@ -48,10 +64,10 @@ export class AgvComponent implements OnInit {
   onAction(type: string){
     if(typeof this.deviceSelected !== "undefined"){
       //console.log(this.deviceSelected);
-      const url = this.BASE_URL+this.listDevice[this.deviceSelected].location;
+      const url = this.BASE_URL+this.devices[this.deviceSelected].location;
       //console.log(url);
       let link : any;
-      this.listDevice[this.deviceSelected].actions.forEach((element:any) => {
+      this.devices[this.deviceSelected].actions.forEach((element:any) => {
         //console.log(element.length)
         //console.log(element.indexOf(type))
         if(element.includes('#'+type) && (element.length - element.indexOf(type) == type.length )) {
@@ -69,8 +85,8 @@ export class AgvComponent implements OnInit {
   }
   onAttribute(attribute: string ,value: any) {
     if(typeof this.deviceSelected !== "undefined"){
-      const url = this.BASE_URL+this.listDevice[this.deviceSelected].location;
-      const kind = this.listDevice[this.deviceSelected].kind;
+      const url = this.BASE_URL+this.devices[this.deviceSelected].location;
+      const kind = this.devices[this.deviceSelected].kind;
       console.log(url);
       console.log(kind);
       

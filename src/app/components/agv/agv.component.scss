@@ -240,3 +240,24 @@
     font-size: 14px;
     font-weight: 600;
 }
+.speed-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding-bottom: 10;
+    padding-right: 15px;
+}
+.speed-container mat-slider{
+    height: 550px;
+    background-color: #1f2c33;
+    border-radius: 25px;
+}
+mat-slider .mat-slider-wrapper {
+    bottom: 15px !important;
+} 
+.mat-accent .mat-slider-track-fill, .mat-accent .mat-slider-thumb, .mat-accent .mat-slider-thumb-label {
+    background-color: white !important;
+}
+.mat-accent .mat-slider-thumb-label-text {
+    color: #1f2c33 !important;
+}

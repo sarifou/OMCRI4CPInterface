@@ -12,13 +12,7 @@ export class AgvComponent implements OnInit, OnDestroy {
   device : any ;
   devices : any[] = [];
   deviceSelected : any;
-  single : any[] = [];
-  view: any[] = [500, 400];
-  legend: boolean = true;
-  legendPosition: string = 'below';
-  min : number = 0;
-  max : number = 20;
-  agvSpeedValue = 2 ;
+  agvSpeedValue = 0 ;
 
   colorScheme = {
     domain: ['#5AA454', '#E44D25', '#CFC0BB', '#7aa3e5', '#a8385d', '#aae3f5']

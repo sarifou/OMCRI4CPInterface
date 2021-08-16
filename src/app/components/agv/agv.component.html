@@ -23,6 +23,9 @@
             </a>
         </div>
     </div>
+    <div class="speed-container">
+        <mat-slider thumbLabel min="1" max="8" step="1" vertical [(ngModel)] = "agvSpeedValue" (change)= "agvSpeed()"></mat-slider>
+    </div>
     <div class="content">
         <div class="navigation">
             <div class="card">

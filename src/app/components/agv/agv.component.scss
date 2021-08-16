@@ -73,7 +73,6 @@
     padding-top: 5px;
     height: 30px;
     width: 30px;
-    color: green;
     cursor: pointer;
 }
 .select i, .battery i {
@@ -181,7 +180,7 @@
     margin: 10px;
     background-color: #1f2c33;
     border: none;
-    color: wheat;
+    color: white;
 }
 .btn-left-top {
     transform: rotate(45deg);
@@ -252,12 +251,9 @@
     background-color: #1f2c33;
     border-radius: 25px;
 }
-mat-slider .mat-slider-wrapper {
-    bottom: 15px !important;
-} 
-.mat-accent .mat-slider-track-fill, .mat-accent .mat-slider-thumb, .mat-accent .mat-slider-thumb-label {
-    background-color: white !important;
+.connectionTrue {
+    color: green;
 }
-.mat-accent .mat-slider-thumb-label-text {
-    color: #1f2c33 !important;
+.connectionFalse {
+    color : white ;
 }

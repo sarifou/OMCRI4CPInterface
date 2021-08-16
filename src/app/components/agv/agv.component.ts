@@ -13,6 +13,7 @@ export class AgvComponent implements OnInit, OnDestroy {
   devices : any[] = [];
   deviceSelected : any;
   agvSpeedValue = 0 ;
+  connectionState : boolean = false;
 
   colorScheme = {
     domain: ['#5AA454', '#E44D25', '#CFC0BB', '#7aa3e5', '#a8385d', '#aae3f5']
@@ -90,6 +91,17 @@ export class AgvComponent implements OnInit, OnDestroy {
       })
     } else {
       console.log("Select device before")
+    }
+  }
+  setConnection() {
+    if(typeof this.deviceSelected !== "undefined" && this.connectionState){
+      this.onAction("disconnect");
+      this.connectionState = false ;
+      console.log("Disconnection successful");
+    } else if(typeof this.deviceSelected !== "undefined" && !this.connectionState){
+      this.onAction("connect")
+      this.connectionState = true ;
+      console.log("Connection successful")
     }
   }
   agvSpeed() {

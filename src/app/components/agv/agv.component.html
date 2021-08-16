@@ -12,8 +12,8 @@
             </div>
         </div>
         <div class="device-info">
-            <a class="connect">
-                <i class="fa fa-wifi" (click)="onAction('connect')"></i>
+            <a class="connect" [ngClass]="{'connectionTrue': connectionState , 'connectionFalse': !connectionState}">
+                <i class="fa fa-wifi" (click)="setConnection()"></i>
             </a>
             <a class="battery">
                 <i class="fa fa-battery"></i><span>75%</span>

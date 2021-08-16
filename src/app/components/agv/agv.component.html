@@ -6,14 +6,14 @@
         <div class="select-device">
             <div class="select">
                 <i class="fa fa-android"></i>
-                <select [(ngModel)]="deviceSelected">
-                    <option *ngFor="let device of devices" value="{{device.title}}">{{device.title}}</option>
+                <select [(ngModel)]="deviceSelected" (change)="onChange($event.target)">
+                    <option *ngFor="let device of devices ; let i = index" value="{{i}}">{{device.title}}</option>
                 </select>
             </div>
         </div>
         <div class="device-info">
             <a class="connect">
-                <i class="fa fa-wifi"></i>
+                <i class="fa fa-wifi" (click)="onAction('connect')"></i>
             </a>
             <a class="battery">
                 <i class="fa fa-battery"></i><span>75%</span>

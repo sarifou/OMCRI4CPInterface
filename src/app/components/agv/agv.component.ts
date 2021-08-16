@@ -32,6 +32,7 @@ export class AgvComponent implements OnInit, OnDestroy {
     })
     this.devicesSub = this.teleop.subDevices.subscribe(response => {
       this.devices = response ;
+      console.log(this.devices)
     })
   }
 
@@ -100,6 +101,12 @@ export class AgvComponent implements OnInit, OnDestroy {
   agvSpeed() {
     console.log(this.agvSpeedValue);
     this.onAttribute('speed.linear', this.agvSpeedValue);
+  }
+
+  onChange(value:any) {
+    
+    //this.teleop.setSelectedDevice(this.deviceSelected);
+    console.log(this.deviceSelected);
   }
 
 }

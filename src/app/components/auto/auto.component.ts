@@ -9,45 +9,17 @@ import { TeleopService } from 'src/app/services/teleop/teleop.service';
 })
 export class AutoComponent implements OnInit {
 
-  BASE_URL = 'http://localhost:8080';
   listDevice : any[] = [];
-  deviceSelected : any;
-  single : any[] = [];
-  view: any[] = [500, 400];
-  legend: boolean = true;
-  legendPosition: string = 'below';
-  min : number = 0;
-  max : number = 20;
-
-  //Variable for AGV
-  agvSpeedValue = 2 ;
-
-  colorScheme = {
-    domain: ['#5AA454', '#E44D25', '#CFC0BB', '#7aa3e5', '#a8385d', '#aae3f5']
-  };
-
   constructor(private martRequest : MartRequestService, private teleop: TeleopService) { 
     
   }
 
   ngOnInit(): void {
-    const debug = [
-      {
-      "title" : "sssssss"
-      },
-      {
-        "title" : "sssssssss"
-      },
-      {
-        "title" : "sssssss"
-      }
-    ]
-    this.teleop.setDevices(debug);
-    /*
     this.martRequest.getAllResources().subscribe(data => {
       this.listDevice = data.resources ;
-      console.log(this.listDevice);
+      this.teleop.setDevices(this.listDevice);
     })
+    /*
     this.device = "agv";
     this.single = [
       {

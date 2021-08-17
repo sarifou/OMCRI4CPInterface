@@ -11,9 +11,10 @@ export class AgvComponent implements OnInit, OnDestroy {
   BASE_URL = 'http://localhost:8080';
   device : any ;
   devices : any[] = [];
-  deviceSelected : any;
+  deviceSelected : any ;
   agvSpeedValue = 0 ;
   connectionState : boolean = false;
+  actionResp : any ;
 
   colorScheme = {
     domain: ['#5AA454', '#E44D25', '#CFC0BB', '#7aa3e5', '#a8385d', '#aae3f5']
@@ -72,7 +73,7 @@ export class AgvComponent implements OnInit, OnDestroy {
         }
       });
       this.martRequest.runAction(url, link, type).subscribe(response => {
-        console.log(response);
+        this.actionResp = response;
       })
     } else {
       console.log("Select device before")
@@ -96,10 +97,12 @@ export class AgvComponent implements OnInit, OnDestroy {
   setConnection() {
     if(typeof this.deviceSelected !== "undefined" && this.connectionState){
       this.onAction("disconnect");
+      this.onAttribute("connection.state", false);
       this.connectionState = false ;
       console.log("Disconnection successful");
     } else if(typeof this.deviceSelected !== "undefined" && !this.connectionState){
-      this.onAction("connect")
+      this.onAction("connect");
+      this.onAttribute("connection.state", true);
       this.connectionState = true ;
       console.log("Connection successful")
     }
@@ -112,7 +115,9 @@ export class AgvComponent implements OnInit, OnDestroy {
   onChange(value:any) {
     
     //this.teleop.setSelectedDevice(this.deviceSelected);
-    console.log(this.deviceSelected);
+    
+    this.connectionState = (this.devices[this.deviceSelected].attributes["connection.state"] === 'true');
+    console.log(this.connectionState);
   }
 
 }

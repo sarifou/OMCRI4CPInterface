@@ -26,6 +26,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { AgvComponent } from './components/agv/agv.component';
+import { CraneComponent } from './components/crane/crane.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { AgvComponent } from './components/agv/agv.component';
     HeaderComponent,
     SimulatorComponent,
     HistoryComponent,
-    AgvComponent
+    AgvComponent,
+    CraneComponent
   ],
   imports: [
     BrowserModule,

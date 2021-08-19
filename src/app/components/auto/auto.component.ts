@@ -10,7 +10,12 @@ import { TeleopService } from 'src/app/services/teleop/teleop.service';
 export class AutoComponent implements OnInit {
 
   listDevice : any[] = [];
-  device = "train";
+  device = "agv";
+  deviceSelected : any ;
+  connectionTrue = false ;
+  connectionFalse = true ;
+  connectionState = false ;
+  BASE_URL = 'http://localhost:8080';
   constructor(private martRequest : MartRequestService, private teleop: TeleopService) { 
     
   }
@@ -19,6 +24,9 @@ export class AutoComponent implements OnInit {
     this.martRequest.getAllResources().subscribe(data => {
       this.listDevice = data.resources ;
       this.teleop.setDevices(this.listDevice);
+    })
+    this.teleop.subSelectedDevice.subscribe(select => {
+      this.deviceSelected = select;
     })
     /*
     this.device = "agv";
@@ -62,5 +70,55 @@ export class AutoComponent implements OnInit {
         console.log("Process Completed")
       }
     )*/
+  }
+  onChange(value:any) {
+    this.teleop.setSelectedDevice(this.deviceSelected);
+  }
+  setConnection() {
+    console.log(this.deviceSelected);
+    if(typeof this.deviceSelected !== "undefined"){
+      const url = this.BASE_URL+this.listDevice[this.deviceSelected].location;
+      if(!this.connectionState) {
+        const type = "connect";
+        let link : any;
+        this.listDevice[this.deviceSelected].actions.forEach((element:any) => {
+          //console.log(element.length)
+          //console.log(element.indexOf(type))
+          if(element.includes('#'+type) && (element.length - element.indexOf(type) == type.length )) {
+            link = element;
+            console.log(link);
+          }
+        });
+        this.martRequest.runAction(url, link, type).subscribe(response => {
+          console.log(response);
+        })
+      } else if (this.connectionState){
+        const type = "disconnect";
+        let link : any;
+        this.listDevice[this.deviceSelected].actions.forEach((element:any) => {
+          //console.log(element.length)
+          //console.log(element.indexOf(type))
+          if(element.includes('#'+type) && (element.length - element.indexOf(type) == type.length )) {
+            link = element;
+            console.log(link);
+          }
+        });
+        this.martRequest.runAction(url, link, type).subscribe(response => {
+          console.log(response);
+        })
+      } 
+    }
+    /*
+    if(typeof this.deviceSelected !== "undefined" && this.connectionState){
+      this.onAction("disconnect");
+      this.onAttribute("connection.state", false);
+      this.connectionState = false ;
+      console.log("Disconnection successful");
+    } else if(typeof this.deviceSelected !== "undefined" && !this.connectionState){
+      this.onAction("connect");
+      this.onAttribute("connection.state", true);
+      this.connectionState = true ;
+      console.log("Connection successful")
+    }*/
   }
 }

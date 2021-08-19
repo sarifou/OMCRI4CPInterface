@@ -16,7 +16,7 @@ export class TeleopService {
 
   // Device seleted for teleop
   subSelectedDevice = new Subject<any>() ;
-  private selectedDevice = "";
+  private selectedDevice : number = 0;
 
   // Http options
   httpOptions = {
@@ -41,7 +41,7 @@ export class TeleopService {
     this.subSelectedDevice.next(this.selectedDevice);
   }
   // Set selected device
-  setSelectedDevice(value : string) {
+  setSelectedDevice(value : number) {
     this.selectedDevice = value ;
     this.emitSelectedDevice();
   }

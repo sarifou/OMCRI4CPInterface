@@ -13,6 +13,7 @@ export class AgvComponent implements OnInit, OnDestroy {
   devices : any[] = [];
   deviceSelected : any ;
   agvSpeedValue = 0 ;
+  agvSpeedAngularValue = 0;
   connectionState : boolean = false;
   actionResp : any ;
 
@@ -95,6 +96,8 @@ export class AgvComponent implements OnInit, OnDestroy {
     }
   }
   setConnection() {
+    console.log(this.deviceSelected);
+    /*
     if(typeof this.deviceSelected !== "undefined" && this.connectionState){
       this.onAction("disconnect");
       this.onAttribute("connection.state", false);
@@ -105,11 +108,15 @@ export class AgvComponent implements OnInit, OnDestroy {
       this.onAttribute("connection.state", true);
       this.connectionState = true ;
       console.log("Connection successful")
-    }
+    }*/
   }
   agvSpeed() {
     console.log(this.agvSpeedValue);
     this.onAttribute('speed.linear', this.agvSpeedValue);
+  }
+  agvSpeedAngular() {
+    console.log(this.agvSpeedAngularValue);
+    this.onAttribute('speed.angular', this.agvSpeedAngularValue);
   }
 
   onChange(value:any) {

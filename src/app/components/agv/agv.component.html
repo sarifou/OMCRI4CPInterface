@@ -1,29 +1,10 @@
 <div class="image">
-    <img src="http://localhost:8585/stream?topic=/usb_cam/image_raw" height="100%" width="100%" alt="">
+    <!--img src="http://localhost:8585/stream?topic=/usb_cam/image_raw" height="100%" width="100%" alt=""-->
+    <img src="/assets/img/capture.png" height="100%" width="100%" alt="">
 </div>
 <div class="contain">
-    <div class="header">
-        <div class="select-device">
-            <div class="select">
-                <i class="fa fa-android"></i>
-                <select [(ngModel)]="deviceSelected" (change)="onChange($event.target)">
-                    <option *ngFor="let device of devices ; let i = index" value="{{i}}">{{device.title}}</option>
-                </select>
-            </div>
-        </div>
-        <div class="device-info">
-            <a class="connect" [ngClass]="{'connectionTrue': connectionState , 'connectionFalse': !connectionState}">
-                <i class="fa fa-wifi" (click)="setConnection()"></i>
-            </a>
-            <a class="battery">
-                <i class="fa fa-battery"></i><span>75%</span>
-            </a>
-            <a class="battery">
-                <i class="fa fa-history"></i><span>1h30mn</span>
-            </a>
-        </div>
-    </div>
     <div class="speed-container">
+        <mat-slider thumbLabel min="1" max="8" step="1" vertical [(ngModel)] = "agvSpeedAngularValue" (change)= "agvSpeedAngular()"></mat-slider>
         <mat-slider thumbLabel min="1" max="8" step="1" vertical [(ngModel)] = "agvSpeedValue" (change)= "agvSpeed()"></mat-slider>
     </div>
     <div class="content">

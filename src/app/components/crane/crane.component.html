@@ -1,1 +1,316 @@
-<p>crane works!</p>
+    <div class="grid-container">
+  <div class="grid-item" id="grid-item1">
+    <div id="display" style="display: inline-table;">
+	<div id="tabledisplay" style="display: table;">
+	  <table class="table-container">
+	    <tbody><tr>
+          <th id="tablespeed">Speed:</th>
+        </tr>
+        <tr>
+          <td id="kranbahn">Chassis</td>
+          <td><button class="button" >-</button></td>
+          <td id="value1">80</td>
+          <td><button class="button" >+</button></td>
+        </tr>
+        <tr>
+          <td id="katze">Travelling crab</td>
+          <td><button class="button" >-</button></td>
+          <td id="value2">30</td>
+          <td><button class="button">+</button></td>
+        </tr>
+        <tr>
+          <td id="seil">Spreader</td>
+          <td><button class="button" >-</button></td>
+          <td id="value3">100</td>
+          <td><button class="button" >+</button></td>
+        </tr>
+      </tbody></table>
+	  </div>
+      <div id="tablesettings" style="display: table;">
+      <table class="table-container">   
+		 <tbody><tr>
+            <th id="specialsettings">Additional functions:</th>
+          </tr>
+          <tr id="main" style="display: table-row-group;">
+            <td colspan="2" id="tablemain">Primary board</td>
+          </tr>
+          <tr id="rowmain16" style="display: table-row-group;">
+            <td id="main16" width="100">Pin 16</td>
+            <td id="valuemain16" width="130">OFF&nbsp;<label class="switch"><input type="checkbox" id="switchmain16" ><span class="slider round"></span> </label>&nbsp;ON</td>
+          </tr>
+          <tr id="slave" style="display: table-row-group;">
+            <td colspan="2" id="tableslave">Secondary board</td>
+          </tr>
+          <tr id="rowslave4" style="display: none;">
+            <td id="slave4">Pin 4</td>
+            <td id="valueslave4">OFF&nbsp;
+              <label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span> </label>
+              &nbsp;ON</td>
+          </tr>
+          <tr id="rowslave5" style="display: none;">
+            <td id="slave5">Pin 5</td>
+            <td id="valueslave5">OFF&nbsp;
+              <label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span> </label>
+              &nbsp;ON</td>
+          </tr>
+          <tr id="rowslave4&amp;5" style="display:table-row-group;">
+            <td id="slave4&amp;5">Pin 4 &amp; 5</td>
+            <td><button class="button round" id="buttonx" >&lt;</button>
+              <button class="button round" id="buttony" >&gt;</button></td>
+          </tr>
+          <tr id="rowslave16" style="display: table-row-group;">
+            <td id="slave16">Pin 16</td>
+            <td id="valueslave16">OFF&nbsp;<label class="switch"><input type="checkbox" id="switchslave16" ><span class="slider round"></span> </label>&nbsp;ON</td>
+          </tr>
+        </tbody></table>
+      </div>
+	</div>
+
+  </div>
+  <div class="grid-item content">
+	   <div class="headlines">
+    <h2 id="heading1" style="display: block;">Container bridge-crane</h2>
+    <h2 id="heading2" style="display: none;">Settings</h2>
+	</div>
+    <div id="container" style="display: block;">
+      <p id="htext" style="color: rgb(77, 77, 77);">Press and hold the left mouse button over an arrow. Emergency stop by mouse click somewhere in the picture.</p><p>
+      </p><div class="button-steuerung"> <img src="/assets/img/Containerbridge1.png" alt="Bild Containerbr�cke" usemap="#steermap">
+        <map name="steermap">
+          <area shape="rect" coords="0,0,823,681" alt="stop">
+        </map>
+        <button id="button1" class="button_round" alt="oben" >&lt;</button>
+        <button id="button2" class="button_round" alt="unten" >&lt;</button>
+        <button id="button3" class="button_round" alt="rechts" >&lt;</button>
+        <button id="button4" class="button_round" alt="links" >&lt;</button>
+        <button id="button5" class="button_round" alt="vorne" >&lt;</button>
+        <button id="button6" class="button_round" alt="hinten" >&lt;</button>
+      </div>
+			 <div id="status" style="display: none;"> <!-- style="display:none" -->
+      <div id="mehr"></div>
+    </div>
+    </div>
+    <div id="settings" style="display: none;">
+      <h3 id="settingsmain">Primary board (E-House)</h3>
+      <table style="text-align: left; width: 600px;"  cellpadding="2" cellspacing="2">
+        <tbody><tr>
+          <td>Pin 16</td>
+          <td>OFF&nbsp;
+            <label class="switch">
+              <input type="checkbox" id="checkboxmain16">
+              <span class="slider round"></span> </label>
+            &nbsp; ON </td>
+        </tr>
+        <tr>
+          <td><input id="namemain16" type="text" placeholder="Name" size="24" maxlength="8"></td>
+          <td><div class="select-wrapper2">
+              <select name="Pin16" id="selectmain16" >
+                <option id="value1schalter" value="S" selected="">Switch</option>
+                <option id="value1taster" value="T">Pushbutton</option>
+              </select>
+            </div></td>
+        </tr>
+        <tr>
+          <td id="dim1">Voltage (0-3,3V)</td>
+          <td><input type="range" min="1" max="100" value="75" id="DimValuemain16"></td>
+        </tr>
+        <tr>
+          <td id="fade1">Fade in/out (%)</td>
+          <td><input type="range" min="1" max="500" value="0" id="FadeValuemain16"></td>
+        </tr>
+        <tr id="BlinkRowmain16" style="display: table-row;">
+          <td id="blink1">Flashing frequency</td>
+          <td><input type="range" min="10" max="3000" value="10" id="BlinkValuemain16"></td>
+        </tr>
+      </tbody></table>
+      <h3 id="settingsslave">Secondary board (Engine house)</h3>
+      <table style="text-align: left; width: 600px;" cellpadding="2" cellspacing="2">
+        <tbody><tr>
+          <td id="function">Function</td>
+          <td><div class="select-wrapper3">
+              <select name="addfunktion" id="addfunktion" >
+                <option id="valuefunctionst" value="ST" selected="">Switch/Pushbutton</option>
+                <option id="valuefunctionmo" value="Mo">Motor control</option>
+              </select>
+            </div></td>
+        </tr>
+      </tbody></table>
+      <table id="motor" style="text-align: left; width: 600px; display: table;" cellpadding="2" cellspacing="2">
+        <tbody><tr>
+          <td>Pin 4 &amp; Pin 5</td>
+          <td>OFF&nbsp;
+            <label class="switch">
+              <input type="checkbox" id="checkboxslave4&amp;5">
+              <span class="slider round"></span> </label>
+            &nbsp; ON </td>
+        </tr>
+        <tr>
+          <td id="dor">Change direction of rotation</td>
+          <td>OFF&nbsp;
+            <label class="switch">
+              <input type="checkbox" id="rotation">
+              <span class="slider round"></span> </label>
+            &nbsp; ON </td>
+        </tr>
+        <tr>
+          <td><input id="nameslave4&amp;5" type="text" placeholder="Name" size="24" maxlength="8"></td>
+          <td><!--<div class="select-wrapper2">
+              <select name="Pin 4&5" id="selectslave4&5">
+                <option id="valuemotor" value="Mot" selected>Motorsteuerung</option>
+              </select> 
+            </div>--></td>
+        </tr>
+        <tr>
+          <td id="settingsspeed">Speed</td>
+          <td><input type="range" min="1" max="100" value="50" id="speed22"></td>
+        </tr>
+        <tr style="display:none">
+          <td>Frequenz</td>
+          <td><input type="number" id="freq2" min="1" max="5" value="3"></td>
+        </tr>
+      </tbody></table>
+      <table id="schalter/taster" style="text-align: left; width: 600px; display: none;" cellpadding="2" cellspacing="2">
+        <tbody><tr>
+          <td>Pin 4</td>
+          <td>OFF&nbsp;
+            <label class="switch">
+              <input type="checkbox" id="checkboxslave4">
+              <span class="slider round"></span> </label>
+            &nbsp; ON </td>
+        </tr>
+        <tr>
+          <td><input id="nameslave4" type="text" placeholder="Name" size="24" maxlength="8"></td>
+          <td><div class="select-wrapper2">
+              <select name="Pin4" id="selectslave4" >
+                <option id="value2schalter" value="S" selected="">Switch</option>
+                <option id="value2taster" value="T">Pushbutton</option>
+              </select>
+            </div></td>
+        </tr>
+        <tr>
+          <td id="dim2">Voltage (0-3,3V)</td>
+          <td><input type="range" min="1" max="100" value="75" id="DimValue4"></td>
+        </tr>
+        <tr>
+          <td id="fade2">Fade in/out (%)</td>
+          <td><input type="range" min="1" max="100" value="0" id="FadeValue4"></td>
+        </tr>
+        <tr id="BlinkRow4">
+          <td id="blink2">Flashing frequency</td>
+          <td><input type="range" min="10" max="1000" value="10" id="BlinkValue4"></td>
+        </tr>
+        <tr>
+          <td>Pin 5</td>
+          <td>OFF&nbsp;
+            <label class="switch">
+              <input type="checkbox" id="checkboxslave5">
+              <span class="slider round"></span> </label>
+            &nbsp; ON </td>
+        </tr>
+        <tr>
+          <td><input id="nameslave5" type="text" placeholder="Name" size="24" maxlength="8"></td>
+          <td><div class="select-wrapper2">
+              <select name="Pin5" id="selectslave5" >
+                <option id="value3schalter" value="S" selected="">Switch</option>
+                <option id="value3taster" value="T">Pushbutton</option>
+              </select>
+            </div></td>
+        </tr>
+        <tr>
+          <td id="dim3">Voltage (0-3,3V)</td>
+          <td><input type="range" min="1" max="100" value="75" id="DimValue5"></td>
+        </tr>
+        <tr>
+          <td id="fade3">Fade in/out (%)</td>
+          <td><input type="range" min="1" max="100" value="0" id="FadeValue5"></td>
+        </tr>
+        <tr id="BlinkRow5">
+          <td id="blink3">Flasching frequency</td>
+          <td><input type="range" min="10" max="1000" value="10" id="BlinkValue5"></td>
+        </tr>
+      </tbody></table>
+      <table style="text-align: left; width: 600px;" cellpadding="2" cellspacing="2">
+        <tbody><tr>
+          <td>Pin 16</td>
+          <td>OFF&nbsp;
+            <label class="switch">
+              <input type="checkbox" id="checkboxslave16">
+              <span class="slider round"></span> </label>
+            &nbsp; ON </td>
+        </tr>
+        <tr>
+          <td><input id="nameslave16" type="text" placeholder="Name" size="24" maxlength="8"></td>
+          <td><div class="select-wrapper2">
+              <select name="Pin16" id="selectslave16" >
+                <option id="value4schalter" value="S" selected="">Switch</option>
+                <option id="value4taster" value="T">Pushbutton</option>
+              </select>
+            </div></td>
+        </tr>
+        <tr>
+          <td id="dim4">Voltage (0-3,3V)</td>
+          <td><input type="range" min="1" max="100" value="75" id="DimValueslave16"></td>
+        </tr>
+        <tr>
+          <td id="fade4">Fade in/out (%)</td>
+          <td><input type="range" min="1" max="100" value="0" id="FadeValueslave16"></td>
+        </tr>
+        <tr id="BlinkRowslave16" style="display: table-row;">
+          <td id="blink4">Flashing frequency</td>
+          <td><input type="range" min="10" max="1000" value="10" id="BlinkValueslave16"></td>
+        </tr>
+      </tbody></table>
+      <h3 id="kbcorrection">Chassis correction</h3>
+      <table style="text-align: left; width: 600px;"  cellpadding="2" cellspacing="2">
+        <tbody><tr>
+          <td id="kbmot1">Motor 1 (Chassis)</td>
+          <td><button class="button round" >&lt;</button>
+            <button class="button round" >&gt;</button></td>
+        </tr>
+        <tr>
+          <td colspan="2" style="border-bottom: none;" id="textkb">With this function you can adjust a 'strained' crane again. Press the arrow keys several times to move motor 1 (Chassis) in one or the other direction. Attention! Incorrect operation can destroy the crane!</td>
+        </tr>
+      </tbody></table>
+      <h3 id="othersettings">More settings (Experts only)</h3>
+      <table style="text-align: left; width: 600px;"  cellpadding="2" cellspacing="2">
+        <tbody><tr>
+          <td id="otaupdate">Firmware update</td>
+          <td id="ustartlink"> <a href="#">Update</a></td>
+        </tr>
+        <tr>
+          <td id="wlanhome">Network</td>
+          <td id="changeNetLink"><a href="#">Change to my network</a></td>
+        </tr>
+		   <tr>
+          <td id="languagetd">Language</td>
+          <td>
+        <div class="select-wrapper2">
+          <select id="language">
+            <option id="languagevaluede" value="deu">German</option>
+            <option id="languagevalueen" value="eng">English</option>
+          </select>
+        </div>
+    </td>
+        </tr>
+      </tbody></table>
+        <div class="buttons">
+      <button id="buttonback" class="button-gardient" >back</button>
+      <button id="buttonsave" class="button_dunkel" >save</button>
+        </div>
+    </div>
+  </div>
+  <div class="grid-item" id="grid-item3">
+    <div id="bat" style="display: block;">
+      <table class="table-menu">
+        <tbody><tr>
+			<td style="border-bottom: none;" id="changeHelpLink"><a href="http://172.17.217.217/hilfestart.html?lang=eng"><img src="/assets/img/icon_hilfe.png" width="40px" heigth="40px" id="help"></a></td>
+          <td style="border-bottom: none;"><img src="/assets/img/bat10.gif" width="17" heigth="17" id="batsym"></td>
+          <td style="border-bottom: none;"><img src="/assets/img/bat10.gif" width="17" heigth="17" id="batsym2"></td>
+        </tr>
+      </tbody></table>
+    </div>
+  </div>
+            </div>

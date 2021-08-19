@@ -1,6 +1,10 @@
 
 
 ///////////////////////////////////////////////////
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+}
 .grid-container {
     display: grid;
     grid-template-columns: auto auto auto;
@@ -88,9 +92,12 @@
 #tablesettings td {
     border-bottom: none;
 }
-	#tablesettings {
-		padding-top: 20px;
-	}
+#tablesettings, #tabledisplay {
+    margin-top: 20px;
+    padding: 15px;
+    color: white;
+    background-color: #2f3d46;
+}
 
 
 .switch {
@@ -153,7 +160,7 @@ input:checked + .slider:before {
 }
 #grid-item1 {
     padding-top: 70px;
-    padding-left: 70px;
+    padding-left: 20px;
 }
 
 dialog:not([open]) {
@@ -161,4 +168,7 @@ dialog:not([open]) {
 }
 #htext {
         color: #eb3941;
+}
+.content {
+    text-align: center;
 }

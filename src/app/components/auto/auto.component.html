@@ -1,3 +1,5 @@
 <div class="drive-container">
-    <app-crane></app-crane>
+    <app-agv *ngIf="device=='agv'"></app-agv>
+    <app-train *ngIf="device=='train'"></app-train>
+    <app-crane *ngIf="device=='crane'"></app-crane>
 </div>

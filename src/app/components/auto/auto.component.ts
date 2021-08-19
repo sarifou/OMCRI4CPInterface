@@ -10,6 +10,7 @@ import { TeleopService } from 'src/app/services/teleop/teleop.service';
 export class AutoComponent implements OnInit {
 
   listDevice : any[] = [];
+  device = "train";
   constructor(private martRequest : MartRequestService, private teleop: TeleopService) { 
     
   }

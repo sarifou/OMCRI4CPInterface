@@ -1,7 +1,10 @@
+* {
+    box-sizing: border-box;
+}
 .container {
     padding: 20px;
     width: calc(100vw - 100px);
-    color: #302f2f;
+    color: white;
     box-sizing: border-box;
 }
 .process-container {
@@ -98,7 +101,7 @@
     text-decoration: none;
 }
 .receiver span{
-    color: #3f4254;
+    color: white;
     font-weight: 600;
 }
 .receiver .name {
@@ -158,14 +161,28 @@
 .update {
     color: salmon;
 }
-.new-process-container {
-    padding-top: 10px;
+.new-process-container , .stats , .card-orders{
+    background-color: #2f3d46;
+    border-radius: .25rem;
+    padding : 10px;
+}
+.stats  {
+    margin-top: 20px;
+    height: 400px;
+}
+.card-orders {
+    margin-left: 20px;
+    margin-right: 20px;
 }
 .process-form {
     min-width: 150px;
     max-width: 500px;
     width: 100%;
+    color: white;
   }
+ .process-form mat-label {
+     color: white;
+ } 
 .input-full-width {
     width: 100%;
 }

@@ -27,6 +27,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { AgvComponent } from './components/agv/agv.component';
 import { CraneComponent } from './components/crane/crane.component';
+import { TrainComponent } from './components/train/train.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { CraneComponent } from './components/crane/crane.component';
     SimulatorComponent,
     HistoryComponent,
     AgvComponent,
-    CraneComponent
+    CraneComponent,
+    TrainComponent
   ],
   imports: [
     BrowserModule,

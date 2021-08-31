@@ -1,5 +1,16 @@
 
+#htext , #heading1{
+    color: white !important;
+}
+#kranbahn, #katze, #seil, #tablemain, #main16, #valuemain16, #tableslave, #slave16{
+    font-size: 14px;
+    font-weight: 600;
+}
 
+#tablespeed {
+    text-align: center;
+    width: 100%;
+}
 ///////////////////////////////////////////////////
 * {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -8,6 +19,7 @@
 .grid-container {
     display: grid;
     grid-template-columns: auto auto auto;
+    padding-top: 25px;
 }
 .button-steuerung {
     position: relative;
@@ -62,18 +74,23 @@
     padding-left: 25px;
     padding-right: 25px;
 	color: #4d4d4d;
-	background-image: linear-gradient(to right, #ECE9E6 0%, #FFFFFF 51%, #ECE9E6 100%);
 	font-weight: 100;
+    background-color: transparent;
+    border: solid 1px rgb(207, 205, 205);
+	color: rgb(228, 225, 225);
+    cursor: pointer;
 }
 .round {
     border-radius: 50%;
 }
 .button {
+    cursor: pointer;
     font-size: 10pt;
     margin: 5px;
 	padding: 7px 12px;
-	background-image: linear-gradient(to right, #ECE9E6 0%, #FFFFFF 51%, #ECE9E6 100%);
-	color: #4d4d4d;
+    background-color: transparent;
+    border: solid 1px rgb(207, 205, 205);
+	color: rgb(228, 225, 225);
 }
 .taster {
     font-size: 10pt;
@@ -97,6 +114,8 @@
     padding: 15px;
     color: white;
     background-color: #2f3d46;
+    width: 300px;
+    border-radius: 5px;
 }
 
 

@@ -8,7 +8,7 @@ import { TeleopService } from 'src/app/services/teleop/teleop.service';
   styleUrls: ['./agv.component.scss']
 })
 export class AgvComponent implements OnInit, OnDestroy {
-  BASE_URL = 'http://localhost:8080';
+  BASE_URL = 'http://192.168.9.128:8080';
   device : any ;
   devices : any[] = [];
   deviceSelected : any ;
@@ -37,7 +37,8 @@ export class AgvComponent implements OnInit, OnDestroy {
    
   }
   ngOnDestroy() : void {
-
+    this.devicesSub.unsubscribe();
+    this.selectedDeviceSub.unsubscribe();
   }
   formatLabel(value: number) {
     if (value >= 1000) {

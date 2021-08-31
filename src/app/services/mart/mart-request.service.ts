@@ -9,7 +9,7 @@ import { map , catchError } from 'rxjs/operators';
 })
 export class MartRequestService {
 
-  ROOT_URL = 'http://localhost:8080/' ;
+  ROOT_URL = 'http://192.168.9.128:8080/' ;
   httpOptions = {
     headers: new HttpHeaders ({
       'Accept' : 'application/json',

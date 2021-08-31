@@ -1,10 +1,10 @@
 <div class="image">
-    <!--img src="http://localhost:8585/stream?topic=/usb_cam/image_raw" height="100%" width="100%" alt=""-->
-    <img src="/assets/img/capture.png" height="100%" width="100%" alt="">
+    <img src="http://192.168.9.128:8585/stream?topic=/usb_cam/image_raw" height="100%" width="100%" alt="">
+    <!--img src="/assets/img/capture.png" height="100%" width="100%" alt=""-->
 </div>
 <div class="contain">
     <div class="speed-container">
-        <mat-slider thumbLabel min="1" max="8" step="1" vertical [(ngModel)] = "agvSpeedAngularValue" (change)= "agvSpeedAngular()"></mat-slider>
+        <mat-slider thumbLabel min="1" max="15" step="1" vertical [(ngModel)] = "agvSpeedAngularValue" (change)= "agvSpeedAngular()"></mat-slider>
         <mat-slider thumbLabel min="1" max="8" step="1" vertical [(ngModel)] = "agvSpeedValue" (change)= "agvSpeed()"></mat-slider>
     </div>
     <div class="content">

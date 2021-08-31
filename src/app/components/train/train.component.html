@@ -7,16 +7,16 @@
             <div class="card-content">
                 <div>
                     <span class="title">Speed</span>
-                    <mat-slider class="speed" thumbLabel min="1" max="8" step="1"></mat-slider>
+                    <mat-slider class="speed" thumbLabel min="1" max="28" step="1" [(ngModel)]="trainSpeed" (change)="setSpeed()"></mat-slider>
                 </div>
                 <div class="btn-container">
-                    <button class="btn">faster</button>
-                    <button class="btn">Slower</button>
-                    <button class="btn">Stop</button>
+                    <button class="btn" (click)="onAction('faster')">faster</button>
+                    <button class="btn" (click)="onAction('slower')">Slower</button>
+                    <button class="btn" (click)="onAction('stop')">Stop</button>
                 </div>
                 <div>
                     <span class="title title_d">Direction</span>
-                    <button class="btn">Reverse</button>
+                    <button class="btn" (click)="onAction('reverse')">Reverse</button>
                 </div>
             </div>
         </div>
@@ -27,19 +27,19 @@
             <div class="card-content">
                 <div class="item-content">
                     <span class="title title_w">Light</span>
-                    <mat-slide-toggle></mat-slide-toggle>
+                    <mat-slide-toggle (change)="setLight()"></mat-slide-toggle>
                 </div>
                 <div class="item-content">
                     <span class="title title_w">Honk</span>
-                    <mat-slide-toggle></mat-slide-toggle>
+                    <mat-slide-toggle (change)="setHonk()"></mat-slide-toggle>
                 </div>
                 <div class="item-content">
                     <span class="title title_w">Train noise</span>
-                    <mat-slide-toggle></mat-slide-toggle>
+                    <mat-slide-toggle (change)="setTrainNoise()"></mat-slide-toggle>
                 </div>
                 <div class="item-content">
                     <span class="title title_w">Wagon noise</span>
-                    <mat-slide-toggle></mat-slide-toggle>
+                    <mat-slide-toggle (change)="setWagonNoise()"></mat-slide-toggle>
                 </div>
             </div>
         </div>
@@ -47,7 +47,52 @@
     <div class="content">
         <img src="/assets/img/train.png" height="800px" width="auto">
     </div>
-    <div class="right-card-container">
-
+    <div class="rigth-card-container">
+        <div class="card">
+            <div class="card-header">
+                <span class="card-title">Switchs : Site 1</span>
+            </div>
+            <div class="card-content">
+                <div class="item-content">
+                    <span class="title title_w">Switch 1</span>
+                    <mat-slide-toggle ></mat-slide-toggle>
+                </div>
+                <div class="item-content">
+                    <span class="title title_w">Switch 2</span>
+                    <mat-slide-toggle ></mat-slide-toggle>
+                </div>
+                <div class="item-content">
+                    <span class="title title_w">Switch 3</span>
+                    <mat-slide-toggle></mat-slide-toggle>
+                </div>
+                <div class="item-content">
+                    <span class="title title_w">Switch 4</span>
+                    <mat-slide-toggle ></mat-slide-toggle>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <span class="card-title">Switchs : Site 2</span>
+            </div>
+            <div class="card-content">
+                <div class="item-content">
+                    <span class="title title_w">Switch 1</span>
+                    <mat-slide-toggle ></mat-slide-toggle>
+                </div>
+                <div class="item-content">
+                    <span class="title title_w">Switch 2</span>
+                    <mat-slide-toggle ></mat-slide-toggle>
+                </div>
+                <div class="item-content">
+                    <span class="title title_w">Switch 3</span>
+                    <mat-slide-toggle></mat-slide-toggle>
+                </div>
+                <div class="item-content">
+                    <span class="title title_w">Switch 4</span>
+                    <mat-slide-toggle ></mat-slide-toggle>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

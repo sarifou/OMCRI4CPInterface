@@ -15,7 +15,7 @@ export class AutoComponent implements OnInit {
   connectionTrue = false ;
   connectionFalse = true ;
   connectionState = false ;
-  BASE_URL = 'http://localhost:8080';
+  BASE_URL = 'http://192.168.9.128:8080';
   constructor(private martRequest : MartRequestService, private teleop: TeleopService) { 
     
   }
@@ -36,7 +36,7 @@ export class AutoComponent implements OnInit {
         "value": 20
       }
     ];
-    const body = {
+    const body = {agv
       "title": "AGVTEST",
       "summary": "AGV for test",
       "kind": "http://cristal.org/omcri4cp/agv#agv",
@@ -71,8 +71,17 @@ export class AutoComponent implements OnInit {
       }
     )*/
   }
+  selectDevice() {
+    const nom = this.BASE_URL+this.listDevice[this.deviceSelected].title ;
+    if(nom.includes("train") ){
+      this.device = "train"
+    } else if(nom.includes("agv")) {
+      this.device = "agv"
+    }
+  }
   onChange(value:any) {
     this.teleop.setSelectedDevice(this.deviceSelected);
+    //this.selectDevice()
   }
   setConnection() {
     console.log(this.deviceSelected);

@@ -1,27 +1,74 @@
-# Omcri4cpinterface
+# OMCRI4CP Interface : Guide utilisateur
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.0.
+## Installations :
+L'interface a besoin de l'environnement Angular pour fonctionner. Pour cela, il faut installer NodeJS et angular CLI.
 
-## Development server
+1. NodeJs & npm (version 12 ou supérieure)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+        sudo apt update
+        sudo apt install nodejs
+        sudo apt install npm
 
-## Code scaffolding
+2. Angular CLI
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+        sudo npm install -g @angular/cli
 
-## Build
+Cloner le référentiel du projet dans le dossier de votre choix
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+    git clone https://github.com/sarifou/OMCRI4CPInterface.git
 
-## Running unit tests
+Se rendre à la racine du projet et installer les dépendances
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+    cd OMCRI4CPInterface
+    npm install
 
-## Running end-to-end tests
+Ouvrir l'application pour vérifier que l'installation s'est bien passée. Toujours à la racine du dossier *OMCRI4CPInterface*, faire:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+    ng serve --open
 
-## Further help
+>:warning: Suivant la version de node on peut avoir une erreur de openssl lors de l'exécution de la commande précédente. Pour résoudre cela faire :
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+    export NODE_OPTIONS=--openssl-legacy-provider
+
+## Présentation des interfaces
+
+ 1. Page d'accueil
+
+La page d’accueil regroupe l’ensemble des statistiques de la plateforme
+ <div style="text-align: center;">
+<img src="images/home.png" width="700" />
+</div>
+
+ 2. Processus client
+
+Cette interface permet à l’opérateur de definir un processus client. Par exemple une récupération d’un conteneur pour un client.
+
+ <div style="text-align: center;">
+<img src="images/process.png" width="700" />
+</div>
+
+ 3. Téléopération
+
+ L’interface de téléopération contient, pour chaque type de robot, l’ensemble des commandes pour les contrôler. Pour les robots avec une caméra embarquée, l’image est mise en arrière des boutons. Le contenu de l’interface change en fonction du type de robot sélectionner.
+
+ <div style="text-align: center;">
+<img src="images/train.png" width="700" />
+</div>
+
+ 4. Simulateur 
+
+ Cette interface renvoie le streaming du jumeau numérique.
+
+ <div style="text-align: center;">
+<img src="images/simulator.png" width="700" />
+</div>
+
+## Liaison de l'application avec MartServer
+
+Pour envoyer et recevoir des requêtes avec le serveur Mart qui fait tourner les différentes extensions du projet OMCRI4CP, il faut fournir l'addresse IP et le port de communication du serveur. Pour cela, il faut changer le **ROOT_URL** dans les différents services de l'application.
+
+Dans src->app->services, ouvrir les fichiers *mart-request.service.ts* et *teleop.service.ts* et remplacer la ligne suivante par la bonne adresse IP. Par défaut, le serveur mart tourne sur le port 8080.
+
+        ROOT_URL = 'http://192.168.9.128:8080/' ;
+
+Cette addresse IP est aussi utiliser dans le .ts des différents components de téléopération, il faut donc la mettre à jour.
